@@ -83,9 +83,9 @@
  
   </view>
  <button class="wx_pay_submit" bindtap="remove">退出登录</button>
-  
+   <button class="wx_pay_submit" bindtap="remove" >退出登录</button>
  -->
- <button class="wx_pay_submit" bindtap="remove" >退出登录</button>
+
     <button class="wx_pay_submit mt25" bindgetuserinfo="bindGetUserInfo" bindtap="tocode" open-type="getUserInfo" wx:if="{{hasphone==false}}"> 绑定手机号码</button>
   </view>
 </view>

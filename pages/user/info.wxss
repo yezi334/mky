@@ -1,5 +1,4 @@
 .page {
-
   background: #fff;
 }
 
@@ -14,8 +13,6 @@
 }
 
 /**遮盖层**/
-
-
 
 .placeholder {
   color: #c1c1c1;
