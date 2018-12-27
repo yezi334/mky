@@ -64,27 +64,7 @@
         <text>会员卡包</text>
       </view>
     </navigator>
-    <!--  <button class="tableviewcell" open-type="share">
-      <image src="/images/my/jy.png" />
-      <text>投诉与建议</text>
-    </button>
-     <button class="tableviewcell" bindtap="remove">
-      <image src="/images/my/jy.png" />
-      <text>退出登录</text>
-    </button>
-    <button class="wx_pay_submit" bindtap="remove">退出登录</button>
-     <view class="footfixed tc">
-    <button class="wx_pay_submit" bindtap="remove" wx:if="{hasphone==true}}">退出登录</button>
-  </view>
-  <view class="footfixed tc">
-    <button class="wx_pay_submit" bindtap="remove" wx:if="{{hasphone==true}}">退出登录</button>
-  </view>
-  <view class="bd tc">
- 
-  </view>
- <button class="wx_pay_submit" bindtap="remove">退出登录</button>
-   <button class="wx_pay_submit" bindtap="remove" >退出登录</button>
- -->
+   
 
     <button class="wx_pay_submit mt25" bindgetuserinfo="bindGetUserInfo" bindtap="tocode" open-type="getUserInfo" wx:if="{{hasphone==false}}"> 绑定手机号码</button>
   </view>
