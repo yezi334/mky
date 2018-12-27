@@ -49,43 +49,6 @@ container {
   background-color: #f8f8f8;
 }
 
-.citypickers {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  background-color: red;
-}
-
-.citybody {
-  position: fixed;
-  bottom: 0px;
-}
-
-.cityheader {
-  position: absolute;
-  top: 0px;
-  width: 93%;
-  z-index: 4;
-}
-
-.city-cancel {
-  float: left;
-  font-size: 15px;
-  color: #818181;
-  width: 60px;
-  height: 30px;
-  line-height: 30px;
-}
-
-.city-true {
-  float: right;
-  font-size: 15px;
-  color: #818181;
-  width: 60px;
-  height: 30px;
-  line-height: 30px;
-}
 
 .section .picker {
   background-color: #fff;

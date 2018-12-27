@@ -64,8 +64,6 @@
         <text>会员卡包</text>
       </view>
     </navigator>
-   
-
     <button class="wx_pay_submit mt25" bindgetuserinfo="bindGetUserInfo" bindtap="tocode" open-type="getUserInfo" wx:if="{{hasphone==false}}"> 绑定手机号码</button>
   </view>
 </view>
