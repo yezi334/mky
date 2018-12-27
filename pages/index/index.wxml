@@ -1,0 +1,47 @@
+<view class="page">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:750rpx;height:187px;" indicator-color="#27aec1">
+    <block wx:for="{{imgUrls}}" wx:key="*this" >
+      <swiper-item>
+        <image src="{{item.photo}}" class="slide-image" width="100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 产品列表 -->
+  <scroll-view>
+
+    <!-- 左侧类型 -->
+    <scroll-view scroll-x class="til mt10 scroll-header" >
+      <view wx:for="{{types}}" wx:key="typeId" data-type-id="{{item.id}}" bindtap="tapType" class="nav tc {{item.id == currType ? 'active' : ''}}" style="text-align:center;font-size:33rpx;border:1px solid #FFF;border-radius:38px;padding:13rpx; display: inline-block;width:20%">
+        {{item.name}}
+      </view>
+    </scroll-view>
+    <!-- 右侧数据 -->
+    <view class="list mt10">
+      <block wx:for="{{typeTree}}" wx:key="*this" data-id="{{item.id}}">
+        <view class="ban buttom">
+          <navigator url="../product/detail?productId={{item.id}}">
+
+            <image src="{{item.photo_d}}" style='width:100%;height:197px;'></image>
+            <view class="act-item ellipsis">
+              <text class="type p_le10 weight">{{item.name}}</text>
+              <text class="pri weight">￥{{item.price}}</text>
+            </view>
+            <view class="act-item ellipsis">
+              <text class="kkk p_le10">{{item.intro}}</text>
+            </view>
+          </navigator>
+          <view class="act-item ellipsis mt5" style="width:100%;">
+            <view class=' tr detail c3' bindtap="todetail" style="z-index:90" data-pid="{{item.id}} "><text class="c3" style="z-index:100">了解详情</text></view>
+            <view class='tr buy' bindtap="tobuy" data-pid="{{item.id}}" wx:if="{{item.order==1}}">立即预定</view>
+             <view class='tr buy' bindtap="tobuy" data-pid="{{item.id}}" wx:else>立即购买</view>
+          </view>
+        </view>
+        <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}"></view>
+      </block>
+      <!-- <view class="clear mt10" bindtap="getMore">查看更多</view>     -->
+    </view>
+
+  </scroll-view>
+</view>

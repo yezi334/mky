@@ -1,0 +1,131 @@
+/* pages/user/user.wxss */
+
+.me {
+  height: 100%;
+}
+
+.bg {
+  width: 750rpx;
+  height:171px;
+}
+
+.userinfo {
+  position: relative;
+ 
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.p1{
+  top:18px;
+  left:20px;
+}
+.p2{
+  top:60px;
+
+}
+/* 会员 */
+
+.p3{
+top:86px;
+}
+.p4{
+top:115px;
+}
+
+.userinfo-avatar {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 14px;
+}
+
+.sc {
+  background: #fff;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  color: #666;
+  padding: 4% 0;
+}
+
+.sc image {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.bte {
+  border-top: 1px solid #eee;
+}
+
+/*menu list*/
+
+.tableviewcell {
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #ddd;
+  color: #666;
+  background: white;
+  display: flex;
+  align-items: center;
+  height:40px;
+line-height:40px
+}
+
+/*icon*/
+
+.tableviewcell image {
+  width: 21px;
+  height: 21px;
+}
+
+/*text*/
+
+.tableviewcell text {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/*button*/
+
+.logout {
+  margin: 30rpx;
+}
+
+/*order*/
+
+.order-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  margin: 20rpx 0;
+  padding: 20rpx 0;
+}
+
+.order {
+  width: 33.3%;
+  text-align: center;
+}
+
+.order image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.order text {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
+}

@@ -1,0 +1,85 @@
+.list {
+  height: 44px;
+  line-height: 44px;
+}
+
+.money {
+  font-weight: 300;
+}
+
+.tom {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 5px;
+}
+
+.swipertb {
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+
+  font-size: 17px;
+  display: inline-block;
+  width: 30%;
+  color: #fff;
+}
+
+.swiper-tab-list2 {
+  font-size: 16px;
+  display: inline-block;
+  width: 113px;
+  color: #fff;
+  background: #27aec1;
+  margin-left: 3px;
+  border-radius: 5px;
+}
+
+.on {
+  color: #27aec1;
+  border-bottom: 5rpx solid #27aec1;
+  width: 30%;
+  font-weight: 600;
+}
+
+.on2 {
+  color: #fff;
+  border-bottom: 5rpx solid #27aec1;
+  width: 30%;
+  font-weight: 600;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.on2 {
+  color: #27aec1;
+  border-bottom: 5rpx solid #27aec1;
+  width: 30%;
+  font-weight: 600;
+}
+
+.swiper-box2 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view2 {
+  text-align: center;
+}
+
+.detail {
+top:215px;
+  width: 100%;
+}

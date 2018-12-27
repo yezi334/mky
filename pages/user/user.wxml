@@ -1,0 +1,91 @@
+<view class="page">
+  <view class="userinfo">
+    <view>
+      <image src="/images/my/bg.png" class='bg'></image>
+    </view>
+    <view style="position:absolute;top:17px" class='tc'>
+      <view>
+        <image class="userinfo-avatar" src="{{avatarUrl}}"></image>
+      </view>
+      <view class="mt7">
+        <text>{{nickName}}</text>
+      </view>
+    </view>
+    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:if="{{user.level == 1}}">vip会员</view>
+    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:elif="{{user.level == 2}}">白银会员</view>
+    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:elif="{{user.level == 3}}">钻石会员</view>
+    <view class="hy font_15 mt10 pa tp3 " bindtap="tomember" wx:else>
+      <text>普通会员</text>
+    </view>
+    <!--<navigator url="../user/checkin">
+    <view class="tableviewcell">
+      <image src="/images/my/rz.png" />
+      <text>商家入驻</text>
+    </view>
+  </navigator>-->
+    <view class="  pa w100 font_16" style="top:200px" wx:if="{{open == 2}}">
+      <view class='inline w50 tc'>
+        <view class='inline'>
+          <image src="/images/my/dl.png" style="width:23px;height:23px "></image>
+        </view>
+        <text class='le5' bindtap="toagency">代理中心</text>
+
+      </view>
+      <text class='tx white inline'>|</text>
+      <view class='inline w50 tc' style="float:right;margin-top:-30px;">
+
+        <view class='inline' style='width:25px;height:45px;line-height:45px;'>
+          <image src="/images/my/my.png" style="width:23px;height:23px;"></image>
+        </view>
+        <text class='le5' bindtap="tomember">我的会员</text>
+      </view>
+    </view>
+  </view>
+  <view style="position:absolute;width:100%;margin-top:-5px;background:#eee;">
+    <view class="tableviewcell" bindtap="toinfo">
+      <image src="/images/my/gr.png" />
+      <text>个人资料</text>
+    </view>
+    <navigator url="../user/dingdan">
+      <view class="tableviewcell">
+        <image src="/images/my/dd.png" />
+        <text>我的订单</text>
+      </view>
+    </navigator>
+    <!--<navigator url="../user/checkin">
+    <view class="tableviewcell">
+      <image src="/images/my/rz.png" />
+      <text>商家入驻</text>
+    </view>
+  </navigator>-->
+    <navigator url="../rituall/rituall">
+      <view class="tableviewcell">
+        <image src="/images/my/kb.png" />
+        <text>会员卡包</text>
+      </view>
+    </navigator>
+    <!--  <button class="tableviewcell" open-type="share">
+      <image src="/images/my/jy.png" />
+      <text>投诉与建议</text>
+    </button>
+     <button class="tableviewcell" bindtap="remove">
+      <image src="/images/my/jy.png" />
+      <text>退出登录</text>
+    </button>
+    <button class="wx_pay_submit" bindtap="remove">退出登录</button>
+     <view class="footfixed tc">
+    <button class="wx_pay_submit" bindtap="remove" wx:if="{hasphone==true}}">退出登录</button>
+  </view>
+  <view class="footfixed tc">
+    <button class="wx_pay_submit" bindtap="remove" wx:if="{{hasphone==true}}">退出登录</button>
+  </view>
+  <view class="bd tc">
+ 
+  </view>
+ <button class="wx_pay_submit" bindtap="remove">退出登录</button>
+  
+ -->
+ <button class="wx_pay_submit" bindtap="remove" >退出登录</button>
+    <button class="wx_pay_submit mt25" bindgetuserinfo="bindGetUserInfo" bindtap="tocode" open-type="getUserInfo" wx:if="{{hasphone==false}}"> 绑定手机号码</button>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<!--内容开始-->
+<view class="cont">
+  <!--<image class="tp_image" src="{{itemData.photo_d}}"></image>-->
+  <swiper style="height:196px">
+    <block wx:for="{{bannerItem}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="title font_17 weight mt10 le15">{{itemData.name}} </view>
+  <view class="gmxx">
+    <text class="font_14 c6 le15">{{itemData.intro}}</text>
+    <view class="price  font_14 le15 mt20">全国统一价：
+      <text style="color:#27aec1" class="font_12">¥</text>
+      <text class="font_20 blue">{{itemData.price}}</text>
+      <text class="font_20 blue fl_r p_ri10" wx:if="{{itemData.order==1}}">预订价：{{itemData.omoney}}</text>
+    </view>
+    <view class="mt10 hr"></view>
+    <view class="jf le15">
+      <text class="font_10" style="color:#27aec1;border:1px solid #27aec1;border-radius:4px;padding:2px 2px">积分</text>
+      <text style="margin-left:10px" class="font_14 c3">购买可得{{itemData.price_jf}}</text>
+    </view>
+
+  </view>
+</view>
+<!--图文详情头部-->
+<view>
+  <view class="swiper-tab">
+    <view class="bre swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商品详情</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">服务流程</view>
+  </view>
+
+  <!--<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  <swiper-item>
+      <import src="../../wxParse/wxParse.wxml" />
+      <view class="wxParse">
+        <scroll-view style="height:2000rpx;" scroll-y='true' bindscroll='scroll'>
+          <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </scroll-view>
+      </view>
+    </swiper-item> -->
+  <swiper current="{{currentTab}}" style="height:{{winHeight - 31}}px" class="swiper-box" duration="300">
+    <!-- 已承担 -->
+    <swiper-item class="swiper-items">
+      <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
+        <import src="../../wxParse/wxParse.wxml" />
+        <block >
+     <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+  <!-- 产品参数 -->
+  <swiper-item>
+    <import src="../../wxParse/wxParse.wxml" />
+    <view class="wxParse">
+      <scroll-view style="height:2000rpx;" scroll-y='true'>
+        <template is="wxParse" data="{{wxParseData:services.nodes}}" />
+      </scroll-view>
+    </view>
+  </swiper-item>
+  </swiper>
+</view>
+
+
+
+
+
+
+<!---底部开始 <navigator class="pr" url="../order/pay?productId={{itemData.id}}" hover-class="changestyle">
+    </navigator>-->
+<view class="footfixed tc">
+  <button class="bg_bule  w100 font_17 white " data-status="1" bindtap="tobuy" bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" wx:if="{{itemData.order==1}}">立刻预定</button>
+  <button class="bg_bule  w100 font_17 white " data-status="1" bindtap="tobuy" bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" wx:else>立刻购买</button>
+</view>

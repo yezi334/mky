@@ -1,0 +1,14 @@
+<view class="cont">
+  <form bindsubmit="reg">
+    <view class="xing">银行卡号
+      <input placeholder-class='placeholder' placeholder='请输入您的银行卡号'  name="num" bindinput='getUserIdCardNumber' type='number' class="in"/>
+    </view>
+    <view class="xing">所属银行： <input class='item-content' value='{{cardType}}' name='card' class="in" disabled='true'></input>
+    </view>
+     <view class="xing">所属支行：
+      <!--       <input placeholder-class='placeholder' placeholder='请输入所属银行' class="in" name='card' bindinput='getUserIdCardNumber' type='text'/>
+     -->  <input placeholder-class='placeholder' placeholder='请输入所属支行' class="in" name='subbranch'  bindinput='getsubbranch'  type='text'/>
+    </view>
+    <button class='changeBtn w100' type="" form-type="submit" hover-class='button-hover'  style="opacity: {{opacity}};" disabled="{{disabled}}" >保存并使用</button>
+  </form>
+</view>

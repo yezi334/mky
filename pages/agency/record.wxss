@@ -1,0 +1,242 @@
+/* pages/user/user.wxss */
+
+.page {
+  width: 100%;
+}
+
+.me {
+  height: 100%;
+}
+
+.bg {
+  width: 750rpx;
+}
+
+.userinfo {
+  position: relative;
+  width: 750rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 210px;
+}
+
+/*menu list*/
+
+.list {
+  height: 44px;
+  line-height: 44px;
+}
+
+.money {
+  font-weight: 300;
+}
+
+.tom {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 5px;
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: Rgba(39, 174, 193, 0.3);
+}
+
+.swiper-tab-list {
+  font-size: 17px;
+  display: inline-block;
+  width: 30%;
+  color: #fff;
+}
+
+.on {
+  color: #27aec1;
+  border-bottom: 5rpx solid #27aec1;
+  width: 30%;
+  font-weight: 600;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.detail {
+  top: 225px;
+  width: 100%;
+  background: #fff;
+  height: 54px;
+}
+
+.on2 {
+  color: #fff;
+  border-bottom: 5rpx solid #27aec1;
+  width: 113px;
+  font-weight: 600;
+  height: 44px;
+  background: #27aec1;
+}
+
+.swiper-box2 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.white {
+  color: #27aec1;
+}
+
+.swiper-tab-list2 {
+  font-size: 16px;
+  display: inline-block;
+  width: 113px;
+  margin-left: 1px;
+  border-radius: 5px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #27aec1;
+}
+
+.swipertb {
+  text-align: center;
+  line-height: 80rpx;
+  height: 44px;
+}
+
+.circle11 {
+  background: #fff;
+  top: 14px;
+  height: 137px;
+  width: 137px;
+  border-radius: 137px;
+  text-align: center;
+}
+
+.circle {
+  position: absolute;
+  background: #fff;
+  top: 30px;
+  height: 105px;
+  width: 105px;
+  border-radius: 50%;
+  text-align: center;
+  border: 10px solid Rgba(39, 174, 193, 0.6);
+}
+
+.circle2 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid Rgba(39, 174, 193, 0.6);
+}
+
+.circle3 {
+  background: #fff;
+  top: 60px;
+  right: 3px;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 1px solid Rgba(39, 174, 193, 0.6);
+}
+
+.circle4 {
+  background: #fff;
+  top: 60px;
+  left: 3px;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 1px solid Rgba(39, 174, 193, 0.6);
+}
+
+.circlex {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid Rgba(39, 174, 193, 0.6);
+}
+
+.row {
+  height: 89px;
+}
+
+.touxiang {
+  height: 43px;
+  width: 43px;
+  border-radius: 33px;
+}
+
+.hy {
+  font-size: 10px;
+  color: #fff;
+  background: #27aec1;
+  width: 43px;
+  margin-top: -15px;
+  position: relative;
+  text-align: center;
+  margin-left: 22%;
+  border-radius: 3px;
+}
+
+.tx {
+  display: inline-block;
+  height: 89px;
+  width: 30%;
+  text-align: center;
+}
+
+.name {
+  font-size: 14px;
+  color: #303030;
+  text-align: center;
+  margin-left: 22%;
+  height: 17px;
+  width: 43px;
+}
+
+.duihuan {
+  width: 15%;
+  height: 36px;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.pid1 {
+  padding-bottom: 10px;
+}
+
+.row2 {
+  height: 110px;
+}
+
+.xy {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: 2px solid #fff;
+  width: 19px;
+  height: 19px;
+  border-radius: 19px;
+  line-height: 19px;
+  text-align: center;
+}

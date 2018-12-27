@@ -1,0 +1,34 @@
+<view class='changeInfo' style='height:{{winHeight}}px'>
+  <view class='top tc'>
+    <image src="/images/my/logo.png" class='logo'></image>
+  </view>
+  <view class="white font_15 tc">因为有爱，不敢老去！</view>
+  <view class='detail mt17'>
+    <image src="/images/my/tjmbg.png" class="bg" style='height:{{winHeight-180}}px'></image>
+    <view class='pa' style='top:130px'>
+      <view class="c3 tc font_15">您的推荐码</view>
+      <view class="blue tc font mt10">{{recomm}}</view>
+      <view class="white tc mt10">
+        <text class="bt font_17" bindtap='copy'> 复制</text>
+      </view>
+      <view class=" w90 c3 mt10 le10 font_13"> 每成功邀请一位好友成为美科会员，即可获得相应的提成奖励。</view>
+    </view>
+  </view>
+  <view class="pa w90"  style='top:{{winHeight-200}}px;left:7%'>
+    <view class="blue tc font_14">
+      推荐规则
+    </view>
+    <view class="c6 font_12 pad">1.每个人推荐码都是专属你个人，请牢记！
+
+    </view>
+    <view class="c6 font_12 pad">
+      2.好友在注册时输入您的专属推荐码进行注册后即可直接绑定为您的直属会员！
+
+    </view>
+    <view class="c6 font_12 pad">
+
+      3.邀请码可以以多方式发送给好友，列如：（QQ、邮件、短信）等。
+    </view>
+  </view>
+
+</view>

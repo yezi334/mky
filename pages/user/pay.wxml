@@ -1,0 +1,95 @@
+<!--pay.wxml-->
+<view class="huise">
+
+<form name='pushMsgFm' report-submit='true' bindsubmit='getFormID'>
+  <view class="w100 buttom">
+    <view class="df item">
+      <view class="cp_photo">
+        <image src="{{item.svpic}}" class="le10"></image>
+      </view>
+      <view class="df_1 le10">
+        <view class="mt5 ovh1 name c3 font_17">
+          {{item.title}}
+        </view>
+        <view class="mt5  name c6 font_14">
+          {{item.intro}}
+        </view>
+        <view class="mt5 ovh1 name c3 font_17 ">
+          全国统一价：
+          <text class='right p_ri10 we30' style="color:#27aec1;font-eight:600">￥{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  <view class="zhifu">
+    <text class='le'> vip卡券：</text>
+    <text class=" right"> 无</text>
+  </view>
+  <view class='hr'></view><view class="zhifu">
+    <text class='le'> vip折扣：</text> 
+    <text wx:if="{{user.level == 1}}" class="right"> 9折 </text>
+    <text wx:elif="{{user.level == 2}}" class="right"> 8折 </text>
+    <text wx:elif="{{user.level == 3}}" class="right"> 7折 </text>
+    <text wx:else class="right"> 无 </text>
+  </view>-->
+  <view class='buttom'></view>
+  <view class="zhifu">
+    <text class='le'> 积分：</text>
+    <text class="font_20 right">{{user.jifen}}</text>
+  </view>
+  <view class='hr'></view>
+  <view class="zhifu">
+    积分抵扣：
+    <view class='fl_r an'>
+      <switch bindchange="switch1Change" data-money="{{needpay}}" data-jifen="{{user.jifen}}" />
+    </view>
+  </view>
+  <view class='buttom'></view>
+  <view class="zhifu">
+    <text class='le'>   电子发票：</text>
+    <view class='fl_r an'>
+      <switch bindchange="switch2Change" />
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class="p_all font_14">
+    <input type="text" name="remark" placeholder="留言" value="{{remark}}" bindinput='getremarkValue' />
+  </view>
+  <view class='hr'></view>
+  <view class="zhifu">
+    <text class='le'>   应付款：</text>
+    <text class="font_20" style="float:right;color:#27aec1;font-eight:600"> {{needpay}}</text>
+  </view>
+  <view class='buttom'></view>
+  <view class='mt50'>
+    <view class="inline p_le10">
+      <checkbox-group bindchange="checkbox" class="check inline ">
+        <view class='c6 font_12'>
+          <checkbox value="是否匿名" />我已阅读并同意
+        </view>
+      </checkbox-group>
+      <navigator url="../order/xbxy?xy=3" hover-class="none">
+        <text class="c3 font_12">《会员协议》
+      </text>
+      </navigator>
+    </view>
+
+  <view  class="inline fl_r p_ri10"> <button class=" bg_bule inline" style="opacity: {{opacity}};color: white; background-color: #27aec1;width:180px;float:right"  form-type="submit" data-id="{{item.id}}"  report-submit="true">立即支付</button></view>
+   </view>
+   
+</form>  
+</view>
+<!--   <view  class="inline fl_r p_ri10"> <button class=" bg_bule inline" style="opacity: {{opacity}};color: white; background-color: #27aec1;width:180px;float:right"  form-type="submit" data-id="{{item.id}}" disabled="{{disabled}}" report-submit="true">立即支付</button></view>
+   </view>
+   
+   <view class="p_all  font_14 hr">
+    <checkbox-group bindchange="checkbox">
+      <view class='check-box'>
+        <checkbox value="是否匿名" />我已阅读并同意
+      </view>
+    </checkbox-group>
+    <navigator url="../order/xbxy" hover-class="none">
+      <text class="xy">《细胞储存服务协议》
+      </text> </navigator>
+      
+  </view> ->

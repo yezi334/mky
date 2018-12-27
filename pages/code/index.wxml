@@ -1,0 +1,16 @@
+
+<view class="cont">
+  <form bindsubmit="reg">
+    <view class="xing">手机号
+     <input placeholder-class='placeholder' placeholder='请输入手机号' class="in inline" name="phone" bindinput='getPhoneValue' type='number' maxlength="11"/>
+    </view>
+    <view class="xing">验证码
+      <input placeholder-class='placeholder' placeholder='请输入验证码' class="in" name='code' maxlength="4" value='{{code}}' bindinput='getCodeValue' type='number' />
+        <button class='codeBtn blue inline' bindtap='getVerificationCode' disabled='{{disabled}}'>{{codename}}</button>
+    </view>
+    <view class="xing">推荐码（选填）
+      <input placeholder-class='placeholder' placeholder='请输入好友推荐码' class="in" name='intro' disabled='{{able}}' value='{{intro}}' bindinput='getintroValue' maxlength="6" type='number'/>
+    </view>
+    <button class='changeBtn w100' bindtap='save'>登录</button>
+  </form>
+</view>

@@ -1,0 +1,137 @@
+<!--pages/user/dingdan.wxml-->
+<view class='page'>
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" data-otype="10" bindtap="swichNav">Vip会员</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-otype="20" bindtap="swichNav">白金会员</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" data-otype="30" bindtap="swichNav">钻石会员</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight-40}}px" bindchange="bindChange" scroll-y='true'>
+
+    <!-- vip会员 -->
+    <swiper-item>
+      <view>
+        <image src="/images/my/vipbg.png" class="pg"></image>
+      </view>
+      <view class="shop df">
+        <view class="df_1">
+          <view class="sp_tit ovh1" style='margin-top:10px'>
+            <image class='png' src="/images/my/vip.png" />
+            <text style="margin-left:5px;font-size:17px;color:#303030">vip会员尊享权益；</text>
+          </view>
+          <view class="sp_text" style='margin-top:10px'>
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1"> 送价值<text class="font_14" style="color:#27aec1">2980元</text>面部细胞护理1次；</text>
+            </view>
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1">直推会员推荐：<text class="font_14" style="color:#27aec1">8%</text>，间接推荐：<text class="font_14" style="color:#27aec1">2%</text>；</text>
+            </view>
+       
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1">享受平台商城<text class="font_14 bl" style="color:#27aec1">9折</text>购物优惠。</text>
+            </view>
+
+          </view>
+        </view>
+      </view>
+   
+    </swiper-item>
+
+    <!-- 白金会员 -->
+    <swiper-item>
+      <view>
+        <image src="/images/my/bjbg.png"  class="pg"></image>
+      </view>
+      <view class="shop df">
+        <view class="df_1">
+          <view class="sp_tit ovh1" style='margin-top:10px'>
+            <image class='png' src="/images/my/by2.png" />
+            <text class="texh">白金会员尊享权益；</text>
+          </view>
+          <view class="sp_text" style='margin-top:10px'>
+
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1"> 送价值<text class="font_14 bl" style="color:#27aec1">2980元</text>元面部细胞护理4次；</text>
+            </view>
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1"> 送17项肿瘤易感性基因</text><text class="bule font_14">（价值:<text class="font_14 bl" style="color:#27aec1">4680</text>元）</text>
+            </view>
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1">直推会员推荐：<text class="font_14 bl" style="color:#27aec1">12%</text>，间接推荐：<text class="font_14 bl" style="color:#27aec1">3%</text>；</text>
+            </view>
+           
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1">享受平台商城<text class="font_14 bl" style="color:#27aec1">8折</text>购物优惠。</text>
+            </view>
+         
+          </view>
+        </view>
+      </view>
+
+    </swiper-item>
+    <!-- 砖石会员 -->
+    <swiper-item>
+      <view>
+        <image src="/images/my/zsbg.png"  class="pg"></image>
+      </view>
+
+      <view class="shop df">
+        <view class="df_1">
+          <view class="sp_tit ovh1" style='margin-top:10px'>
+            <image class='png' src="/images/my/zs.png" />
+            <text class="texh">钻石会员尊享权益；</text>
+          </view>
+          <view class="sp_text" style='margin-top:10'>
+             <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1"> 送价值<text class="font_14 bl" style="color:#27aec1">2980</text>元面部细胞护理20次；</text>
+            </view>
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1"> 送个人全基因组健康管理（价值<text class="font_14 bl" style="color:#27aec1">10800</text>元）；</text>
+            </view>
+           
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1">直推会员推荐：<text class="font_14 bl" style="color:#27aec1">15%</text>%，间接推荐：<text class="font_14 bl" style="color:#27aec1">5%</text>；</text>
+            </view>
+         
+            <view class="sp_tit ovh1">
+              <view class="circle"></view>
+              <text class="tx1">享受平台商城<text class="font_14 bl" style="color:#27aec1">7折</text>购物优惠。</text>
+            </view>
+          
+          </view>
+        </view>
+      </view>
+
+    </swiper-item>
+  </swiper>
+     <view class="footfixed tc bg_bule">
+        <view wx:if="{{user.level == 1}}">
+          <view bindtap="actionSheetTap" class="bg_bule white">升级会员</view>
+          <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+            <block wx:for-items="{{actionSheetItems}}">
+              <action-sheet-item data-level="{{item.level}}" bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+            </block>
+            <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+          </action-sheet>
+        </view>
+        <view wx:elif="{{user.level == 2}}">
+          <view class="bg_bule white w100 fl_l" bindtap="wxpay" data-level="3">升级为钻石会员</view>
+        </view>
+        <view wx:elif="{{user.level == 3}}">
+          <view class="bg_bule white w100 fl_l">你已经成为我们的钻石会员</view>
+        </view>
+        <view wx:else>
+          <view class="bg_bule white w100 fl_l" bindtap="wxpay" data-level="{{level}}">立即开通￥{{money}}元</view>
+        </view>
+      </view>
+</view>

@@ -1,0 +1,41 @@
+<view>
+  <form bindsubmit="reg">
+    <view class="xing">银行卡
+      <view class='in' bindtap="listenerButton">
+        <text wx:if="{{card}}">{{card}}({{cardnum}})</text>
+        <text style="font-size:25px;float:right;padding-right:15px;"> {{fuhao}}  </text>
+      </view>
+      <!--默认action-sheet为隐藏，由button触发   <input type="primary" bindtap="listenerButton" class="in" />银行卡-->
+      <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet">
+        <scroll-view scroll-y="true" style="height:{{actionSheetItems.length>=3?300:''}}px">
+
+          <block wx:for="{{actionSheetItems}}">
+            <action-sheet-item>
+              <view bindtap='check'  style='height:50px;line-height:50px' data-cardid="{{item.id}}" data-card="{{item.card}}" data-cardnum="{{item.number}}">{{item.card}}({{item.number}})
+                <text class='jiantou'>></text>
+              </view>
+            </action-sheet-item>
+          </block>
+          <action-sheet-item>
+            <view bindtap='addcard' class="foot tc">添加银行卡</view>
+          </action-sheet-item>
+          <!--自动隐藏action-sheet-->
+
+        </scroll-view>
+      </action-sheet>
+    </view>
+    <view class="hr"></view>
+    <view class="xing">提现金额：
+      <input placeholder-class='placeholder' placeholder='请输入您的提现金额' class="in" name='money' value="{{money}}"  type="digit" bindinput='inputNum' />
+    </view>
+    <view class="hr"></view>
+    <view class='p_le10 font_14 mt10'>
+      <text class="c3">可提现</text>
+      <text class='green'>{{allmoney}}元</text>
+      <text class='p_le10 blue' bindtap='allmoney'>全部提现</text>
+    </view>
+    <view style="display:hidden" class="mt50">
+      <button type="" bindtap='save' hover-class='button-hover ' class='changeBtn w100' style="opacity: {{opacity}};" disabled="{{disabled}}" >提现</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,146 @@
+page{
+  background:#eee;
+
+}
+.page {
+  font-family: '微软雅黑';
+  background-color: #fff;
+}
+
+/**index.wxss**/
+
+.swiper_container {
+  height: 50rpx;
+}
+
+.swiper_item {
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.swiper-item {
+  display: block;
+}
+
+.slide-image {
+  width: 100%;
+  height: 190px;
+}
+
+.ooo {
+  margin-right: 20rpx;
+  float: right;
+  height: 96%;
+}
+
+.tb {
+  height: 23px;
+  width: 26px;
+}
+
+.jjj {
+  margin-left: 20rpx;
+  float: left;
+  height: 96%;
+}
+
+.k {
+  position: relative;
+  top: 52rpx;
+  right: 282rpx;
+  opacity: 0;
+}
+
+.gs {
+  float: left;
+  position: relative;
+  top: -96rpx;
+  left: 40rpx;
+  display: flex;
+  opacity: 0;
+}
+
+.nav_more {
+  width: 100%;
+  display: flex;
+  padding: 30rpx;
+}
+
+.hot .more {
+  width: 170rpx;
+  padding: 5rpx;
+}
+
+.more {
+  margin-left: 370rpx;
+}
+
+/* 导航对应内容项 */
+
+.nav_section {
+  width: 100%;
+}
+
+.nav_section_items {
+  height: 128px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  border-bottom: 10px solid #eee;
+
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.nav_section_items:active {
+  background: #ddd;
+}
+
+.nav_section_items .section_image {
+  width: 113px;
+  height: 113px;
+  overflow: hidden;
+  margin-top: 6px;
+  padding-right: 15px;
+}
+
+.nav_section_items .section_image image {
+  width: 113px;
+  height: 113px;
+}
+
+.nav_section_items .section_cont {
+  width: 400rpx;
+  font-size: 26rpx;
+
+  height: 113px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.nav_section_items .section_cont view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.nav_section_items .section_cont .section_cont_intro {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.nav_section_items .section_cont .section_cont_sub {
+  font-size: 17px;
+ padding-top:12px;
+  color: #000;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,10 @@
+<!--pages/index/detail.wxml-->
+<!--内容开始-->
+<view class="cont">
+  <import src="../../wxParse/wxParse.wxml" />
+  <view class="wxParse">
+    <scroll-view style="height:2000rpx;" scroll-y='true'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </scroll-view>
+  </view>
+</view>

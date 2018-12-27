@@ -1,0 +1,59 @@
+ <view class='page'>
+  <form bindsubmit="reg">
+    <view class="xing">姓名
+      <input placeholder-class='placeholder' placeholder='请输入真实姓名'  maxlength='5' class="in" name="name" value="{{userinfo.name}}" disabled='{{able}}'/>
+    </view>
+    <view class="hr"></view>
+        <view bindtap="actionSheetTap" class="xing">性别
+             <view class=" in" name='tel' >{{sex}}</view>
+        <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange" >
+          <block wx:for-items="{{actionSheetItems}}">
+            <action-sheet-item data-sex="{{item.sex}}" bindtap="bindsex">{{item.txt}}</action-sheet-item>
+          </block>
+          <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+        </action-sheet>
+ </view>
+    <view class="hr"></view>
+    <view class="xing">手机号
+      <input placeholder-class='placeholder' disabled='{{able}}' type="number" placeholder='请输入您的手机号码' class="in" name='tel' maxlength="11" value="{{userinfo.tel}}" />
+    </view>
+    <view class="hr"></view>
+    <view class="xing">身份证号码
+      <input placeholder-class='placeholder' type="idcard" placeholder='请输入您的身份证号码' class="in"  name='id_num' disabled='{{able}}'  maxlength="18" value="{{userinfo.id_num}}"  />
+    </view>
+    <view class="buttom"></view>
+    <view class="xing">所属区域
+     
+   <!--  <input placeholder-class='placeholder' placeholder='请输入您的所属区域' class="in" name='area' value="{{userinfo.area}}" />>-->
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="in">
+    <view >
+               
+      {{province}}-{{city}}-{{county}}
+    </view>
+  </picker>
+
+
+    </view>
+    <view class="hr"></view>
+    <view class="xing">详细地址
+      <input placeholder-class='placeholder' placeholder='请输入您的详细地址' class="in" name='address' value="{{userinfo.address}}" disabled='{{able}}' />
+    </view>
+     <view class="hr"></view>
+
+
+
+    <!--  <view wx:if="{hascard==true}}">
+      <view class="xing">银行卡卡号{{hascard}}
+        <input placeholder-class='placeholder' type="number" placeholder='请输入您的银行卡号码' class="in" name='card' value="{{userinfo.card}}" wx:if="{hascard==true}}" />
+      </view>
+      <view class="hr"></view>
+      <view class="xing">所属银行
+        <input placeholder-class='placeholder' placeholder='请选择所属银行' class="in" name='blank' value="{{userinfo.blank}}" wx:if="{hascard==false}}" />
+      </view></view>-->
+<view  style="height:50px"></view>
+    <view   style="display:hidden" >
+      <button type="" form-type="submit" hover-class='button-hover' style="opacity: {{opacity}};" disabled="{{disabled}}" class='su'>保存并使用</button>
+
+    </view>
+  </form>
+</view>

@@ -1,0 +1,14 @@
+.tom{
+  height:44px;
+  line-height: 44px;
+  border-radius: 5px;
+}
+.page{
+ 
+  background: #FFF;
+  margin: 0 auto;
+
+}
+.bt30{
+  margin-bottom: 30px;
+}

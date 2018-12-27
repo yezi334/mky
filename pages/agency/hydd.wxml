@@ -1,0 +1,408 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+  <view class="userinfo" wx:if="{{fxlevel != 3}}">
+    <view>
+      <image src="/images/my/gryj.png" class='bg'></image>
+    </view>
+    <view class='pa p1'>
+      <view style=" display:inline-block;">
+        <image src="{{weixin.avatarurl}}" class="touxiang"></image>
+      </view>
+      <view class="wenzi font_12">
+        <text>{{weixin.nickname}}</text>
+        <text class="font_12 bor " wx:if="{{weixin.level == 1}}">
+     Vip会员</text>
+        <text class="font_12 bor" wx:elif="{{weixin.level == 2}}">
+    白金会员</text>
+        <text class="font_12 bor" wx:elif="{{weixin.level == 3}}">
+    钻石会员</text>
+        <text class="font_12 bor" wx:else>
+      普通会员</text>
+      </view>
+    </view>
+    <view class='pa p2 font_16'>
+      <text class="tc" style="height:44px;line-height:44px">本月业绩</text>
+    </view>
+    <view class=" pa p3 font_18">
+      <text wx:if="{{achie.month}}">￥{{achie.month}}(元）</text>
+      <text wx:else>0(元）</text>
+    </view>
+    <view class="pa  w100 fl_l p4">
+      <view class='w50 tc fl_l'>
+        <text class=' tx ' style="color：blue">
+        上月业绩: </text>
+        <text wx:if="{{comm.all}}">￥{{comm.all}}</text>
+        <text wx:else>0(元）</text>
+      </view>
+      <view class='w50 fl_l tc'>
+        <text class='tx ' style="color：blue">
+        已提现:  </text>
+        <text>0(元）</text>
+      </view>
+      <!--  <span class='tx' style="color：blue">
+        可提现:
+           <text wx:if="{{comm.all}}">￥{{comm.all}}</text>
+      <text wx:else>0(元）</text>
+      </span>
+      <span class='tx' style="color：blue;padding-left:50px">已经提现：
+        <text wx:if="!{{comm.alreadyl}}">0(元）</text>
+        <text wx:else>￥{{comm.alreadyl}}(元）</text>
+      </span>-->
+
+    </view>
+  </view>
+
+
+  <view class='pa w100 ' style="margin-top:-5px" >
+    <view class="w100 tc hr" wx:if="{{fxlevel != 3}}">
+      <view class="tc hr" style="height:44px;line-height:44px">业绩详情</view>
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}r" data-current="0" data-otype="10" bindtap="swichNav">全部订单</view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-otype="20" bindtap="swichNav">近一个月</view>
+      <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" data-otype="30" bindtap="swichNav">近三个月</view>
+      <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" data-otype="40" bindtap="swichNav">近半年</view>
+    </view>
+
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight -20}}px;" bindchange="bindChange">
+
+      <!-- 待付款 -->
+      <swiper-item>
+      <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+        <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
+
+          <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+               <text wx:if="{{fxlevel == 1}}">充值成为</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}充值成为</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}充值成为</text>
+            </text>
+            <text wx:else>
+             <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}充值成为</text>
+            <text wx:else> 充值成为</text>
+            </text>
+            <text wx:if="{{item.level == 1}}">VIP会员</text>
+            <text wx:elif="{{item.level == 2}}">白金会员 </text>
+            <text wx:else>钻石会员 </text>
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:elif="{{item.event == 2}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 1}}">在美科云购物消费</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}在美科云购物消费</text>
+            </text>
+            <text wx:else> 
+          
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else> 在美科云购物消费</text>
+            </text>
+
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+</view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:else>
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 3}}">{{item.pname}}完成推荐{{item.names}}您获得</text>
+            </text>
+            <text wx:else> 
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.names}}成功</text>
+            </text>
+            <text wx:if="{{item.level == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%隶属</text>
+            <text wx:else>获得8%</text> 管理奖</text>
+            <text wx:elif="{{item.level== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%隶属</text>
+            <text wx:else>获得12%</text> 管理奖</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%隶属</text>
+            <text wx:else>获得15%</text> 管理奖</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr  p_5bt">{{item.addtime}}</view>
+          </view>
+        </view>
+
+  </scroll-view>
+      </swiper-item>
+
+      <!-- 待付款 -->
+      <swiper-item>
+        <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+        <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
+
+          <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+               <text wx:if="{{fxlevel == 1}}">充值成为</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}充值成为</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}充值成为</text>
+            </text>
+            <text wx:else>
+             <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}充值成为</text>
+            <text wx:else> 充值成为</text>
+            </text>
+            <text wx:if="{{item.level == 1}}">VIP会员</text>
+            <text wx:elif="{{item.level == 2}}">白金会员 </text>
+            <text wx:else>钻石会员 </text>
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:elif="{{item.event == 2}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 1}}">在美科云购物消费</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}在美科云购物消费</text>
+            </text>
+            <text wx:else> 
+          
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else> 在美科云购物消费</text>
+            </text>
+
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+</view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:else>
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 3}}">{{item.pname}}完成推荐{{item.names}}您获得</text>
+            </text>
+            <text wx:else> 
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.names}}成功</text>
+            </text>
+            <text wx:if="{{item.level == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%隶属</text>
+            <text wx:else>获得8%</text> 管理奖</text>
+            <text wx:elif="{{item.level== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%隶属</text>
+            <text wx:else>获得12%</text> 管理奖</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得533%隶属{{item.level}}22</text>
+            <text wx:else>获得15%</text> 管理奖</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr  p_5bt">{{item.addtime}}</view>
+          </view>
+        </view>
+
+  </scroll-view>
+
+      </swiper-item>
+
+      <!-- 待收货 -->
+      <swiper-item>
+          <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+        <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
+
+          <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+               <text wx:if="{{fxlevel == 1}}">充值成为</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}充值成为</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}充值成为</text>
+            </text>
+            <text wx:else>
+             <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}充值成为</text>
+            <text wx:else> 充值成为</text>
+            </text>
+            <text wx:if="{{item.level == 1}}">VIP会员</text>
+            <text wx:elif="{{item.level == 2}}">白金会员 </text>
+            <text wx:else>钻石会员 </text>
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:elif="{{item.event == 2}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 1}}">在美科云购物消费</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}在美科云购物消费</text>
+            </text>
+            <text wx:else> 
+          
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else> 在美科云购物消费</text>
+            </text>
+
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+</view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:else>
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 3}}">{{item.pname}}完成推荐{{item.names}}您获得</text>
+            </text>
+            <text wx:else> 
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.names}}成功</text>
+            </text>
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%隶属</text>
+            <text wx:else>获得8%</text> 管理奖</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%隶属</text>
+            <text wx:else>获得12%</text> 管理奖</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%隶属</text>
+            <text wx:else>获得15%</text> 管理奖</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr  p_5bt">{{item.addtime}}</view>
+          </view>
+        </view>
+
+  </scroll-view>
+      </swiper-item>
+
+      <!-- 已完成-->
+      <swiper-item>
+          <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+        <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
+
+          <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+               <text wx:if="{{fxlevel == 1}}">充值成为</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}充值成为</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}充值成为</text>
+            </text>
+            <text wx:else>
+             <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}充值成为</text>
+            <text wx:else> 充值成为</text>
+            </text>
+            <text wx:if="{{item.level == 1}}">VIP会员</text>
+            <text wx:elif="{{item.level == 2}}">白金会员 </text>
+            <text wx:else>钻石会员 </text>
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:elif="{{item.event == 2}}">
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 1}}">在美科云购物消费</text>
+            <text wx:elif="{{fxlevel == 0}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else>{{item.name1}}推荐{{item.name}}在美科云购物消费</text>
+            </text>
+            <text wx:else> 
+          
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.name}}在美科云购物消费</text>
+            <text wx:else> 在美科云购物消费</text>
+            </text>
+
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%</text>
+            <text wx:else>获得8%</text> 现金奖励</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%</text>
+            <text wx:else>获得12%</text> 现金奖励</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%</text>
+            <text wx:else>获得15%</text> 现金奖励</text>
+</view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr p_le10 p_5bt">{{item.addtime}}</view>
+          </view>
+          <view class="c3 font_14 he25 p_le10 mt8 " wx:else>
+          <view class='w80'>
+            <text wx:if="{{item.fxlevel == 1}}">
+                   <text wx:if="{{fxlevel == 3}}">{{item.pname}}完成推荐{{item.names}}您获得</text>
+            </text>
+            <text wx:else> 
+            <text wx:if="{{fxlevel == 3}}">推荐{{item.names}}成功</text>
+            </text>
+            <text wx:if="{{item.alevel == 1}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得2%隶属</text>
+            <text wx:else>获得8%</text> 管理奖</text>
+            <text wx:elif="{{item.alevel== 2}}">
+              <text wx:if="{{item.fxlevel == 1}}">获得3%隶属</text>
+            <text wx:else>获得12%</text> 管理奖</text>
+            <text wx:else>
+              <text wx:if="{{item.fxlevel == 1}}">获得5%隶属</text>
+            <text wx:else>获得15%</text> 管理奖</text>
+            </view>
+            <view class="c3 font_14 blue fl_r inline money p_ri10">{{item.money}}</view>
+            <view class="c6  font_10 mt8 hr  p_5bt">{{item.addtime}}</view>
+          </view>
+        </view>
+
+  </scroll-view>
+      </swiper-item>
+
+      <!-- 退款/售后 -->
+
+    </swiper>
+  </view>
+</view>

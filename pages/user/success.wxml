@@ -1,0 +1,15 @@
+<view class="page tc w80">
+  <view style="margin-top:130px" class="tc">
+    <image src="/images/my/success.png" style="width:69px;height:69px;"></image>
+  </view>
+  <view class='c3 font_20 tc'>支付成功</view>
+  <view class="mt10 font_14 c6 bt30">恭喜您！您已经成功开通我们的
+    <text wx:if="{{level == 1}}">vip会员</text>
+    <text wx:elif="{{level == 2}}">vip会员</text>
+    <text wx:else>vip会员</text> 了解会员权益请前往我的会员进行查看
+  </view>
+  <!-- <navigator url="../user/member" hover-class="changestyle"> </navigator> !-->
+    <view class="bg_bule tom white font_17" style="width:222px;margin:0 auto" bindtap='cityNameClick'>前往我的会员</view>
+ 
+
+</view>

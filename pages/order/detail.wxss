@@ -1,0 +1,64 @@
+/* pages/order/detail.wxss */
+.w100{
+    background:  #fff;
+}
+.top {
+  background: #27aec1;
+  height: 65px;
+  color: #fff;
+}
+.tx {
+margin-left:15px;
+line-height:68px;
+}
+.item .cp_photo {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.text1 {
+  font-size: 12px;
+  color: #606060;
+}
+
+.text2 {
+  font-size: 14px;
+  color: #303030;
+  float: right;
+}
+
+.text3 {
+  font-size: 14px;
+  color: #27acc1;
+  float: right;
+}
+
+.sp_neb {
+  width: 95%;
+  margin: 0 auto;
+  height:22px;
+  line-height:22px;
+}
+.sp_neb2 {
+  width: 95%;
+  margin: 0 auto;
+  height:28px;
+  line-height: 28px;
+}
+.hf{
+ margin-top:5px;
+}
+.buy{
+  width:20%;
+
+text-align:center;
+line-height:44px;
+height:44px;
+
+  
+
+
+}

@@ -1,0 +1,117 @@
+/**index.wxss**/
+
+.swiper_container {
+  height: 50rpx;
+}
+.swiper_item {
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.swiper-item {
+  display: block;
+}
+
+.slide-image {
+  width: 100%;
+  height: 190px;
+}
+
+.type {
+  font-size: 17px;
+}
+
+.pri {
+  font-size: 20px;
+  color: #27aec1;
+  float: right;
+  margin-right: 10px;
+}
+
+.kkk {
+  font-size: 14px;
+  color: #606060;
+}
+
+.left {
+  width: 100%;
+}
+
+.detail {
+background-color:Rgba(39,174,193,0.5);
+  color: #303030;
+}
+
+.tr {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  height: 44px;
+}
+
+.buy {
+  display: inline-block;
+  background: #27aec1;
+  color: #fff;
+}
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  line-height: 80rpx;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.swiper-tab-list {
+  font-size: 12px;
+  display: inline-block;
+  width: 29%;
+  color: #666;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+
+/* 导航对应内容项 */
+
+.nav {
+  color: #303030;
+  background: #fff;
+  font-size: 16px;
+  border: 1px solid #fff;
+  padding: 8px;
+  margin-left: 20px;
+}
+
+/* 横向滚动 */
+.scroll-header{
+display: flex;
+white-space: nowrap;  
+}
+
+
+
+.active {
+  color: #fff;
+  background: #27aec1;
+  font-size: 14px;
+  border: 1px solid #fff;
+  padding: 8px;
+  margin-left: 20px;
+}
+
+.list {
+  background: #fff;
+}

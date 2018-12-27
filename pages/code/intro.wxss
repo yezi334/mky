@@ -1,0 +1,45 @@
+page {
+  height: 100%;
+  width: 100%;
+  background: #27aec1;
+}
+
+.logo {
+  width: 59px;
+  height: 66px;
+
+}
+
+.top {
+
+ margin-top:10px;
+ 
+}
+
+.bg {
+  width: 95%;
+  background: #27aec1;
+
+}
+
+.detail {
+  margin-left: 5%;
+}
+
+.font {
+  font-size: 35px;
+}
+
+.bt {
+  background: #27aec1;
+  padding: 5px 50px;
+  border-radius: 17px;
+}
+
+.mt90 {
+  margin-top: 90px;
+  margin-left: 5%;
+}
+.pad{
+  padding:5px;
+}

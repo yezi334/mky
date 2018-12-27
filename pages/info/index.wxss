@@ -1,0 +1,53 @@
+/*地址管理*/
+
+page {
+  background-color: #efeff4;
+  font-size: 10pt;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-top: 1px;
+ height:66px;
+
+}
+
+.address-icon {
+  width: 100rpx;
+}
+
+.address-detail {
+  width: 50%;
+}
+
+.address-name-phone {
+  
+  font-size: 11px;
+  font-weight: 900;
+}
+.he{
+height:66px;
+line-height:66px
+}
+.he33{
+height:25px;
+line-height:25px
+}
+.address-name {
+  margin-right: 20rpx;
+}
+
+.address-info {
+  margin-bottom: 30rpx;
+}
+
+.address-edit {
+  width: 40px;
+ 
+}

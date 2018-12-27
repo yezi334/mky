@@ -1,0 +1,26 @@
+<view class='page'>
+
+  <!-- <view class='top tc'></view>-->
+  <image src="/images/my/ewmbj.png" class='tc w100' style="height:{{winHeight}}px"></image>
+  <!-- <view class="white font_15 tc">因为有爱，不敢老去！</view>-->
+  <view class="pa w100 tc" style="top:160px">
+    <view class=' white mt30 '>
+      <view class=' inline'>
+        <image src="{{avatarUrl}}" class='user tc'></image>
+      </view>
+      <view class=" inline le20 font_14 ">
+        <view style='margin-right:47px'>我是：
+          <text style='color:#E4D049' class="font_16">{{nickName}}</text>
+        </view>
+        <view class='tx'>我为美科云小程序代言</view>
+      </view>
+    </view>
+    <view class='tc mt30'>
+      <image src="{{imgurl}}" data- src="{{imgurl}}" class="ewm" />
+    </view>
+    <view class='white tc mt20'>
+      <view>扫描小程序码</view>
+      <view>和我一起呵护健康</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,585 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.page {
+  background: #eee;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.hr2 {
+  height: 110rpx;
+  border-bottom: 5rpx lightgrey solid;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.df {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.df_1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.df_2 {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bg {
+  background: #fff;
+}
+
+.bg_bule {
+  background: #27aec1;
+}
+
+.clear {
+  clear: both;
+}
+
+.ovh1 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.c3 {
+  color: #303030;
+}
+
+.c6 {
+  color: #606060;
+}
+
+.c9 {
+  color: #999;
+}
+
+.c1 {
+  color: #c1c1c1;
+}
+
+.white {
+  color: #fff;
+}
+
+.blue {
+  color: #27aec1;
+}
+
+.green {
+  color: #32c127;
+}
+
+.red {
+  color: #c12727;
+}
+
+.font_18 {
+  font-size: 18px;
+}
+
+.font_20 {
+  font-size: 20px;
+}
+
+.font_17 {
+  font-size: 17px;
+}
+
+.font_16 {
+  font-size: 16px;
+}
+
+.font_15 {
+  font-size: 15px;
+}
+
+.font_14 {
+  font-size: 14px;
+}
+
+.font_13 {
+  font-size: 13px;
+}
+
+.font_12 {
+  font-size: 12px;
+}
+
+.font_10 {
+  font-size: 10px;
+}
+
+.l_h20 {
+  line-height: 20px;
+}
+
+/*定位*/
+
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+/*文字超出省略*/
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+/*对齐*/
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+/*间距*/
+
+.mt1 {
+  margin-top: 1px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mt7 {
+  margin-top: 7px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mt17 {
+  margin-top: 17px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt25 {
+  margin-top: 25px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mt35 {
+  margin-top: 35px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.mt50 {
+  margin-top: 50px;
+}
+
+.mt60 {
+  margin-top: 60px;
+}
+
+/*字距*/
+
+.p_ri10 {
+  padding-right: 10px;
+}
+.p_ri15 {
+  padding-right: 15px;
+}
+.p_5bt {
+  padding-buttom: 5px;
+}
+
+.p_all {
+  padding: 3%;
+}
+
+.p_le10 {
+  padding-left: 10px;
+}
+
+.p_le20 {
+  padding-left: 20px;
+}
+
+.p_le5 {
+  padding-left: 5px;
+}
+
+.p_le15 {
+  padding-left: 15px;
+}
+
+.p_top10 {
+  padding-top: 10px;
+}
+
+/*边框*/
+
+.bte {
+  border-top: solid 1px #eee;
+}
+
+.bbe {
+  border-bottom: solid 1px #eee;
+}
+
+.bre {
+  border-right: 1px solid #eee;
+}
+
+/*浮动*/
+
+.fl_l {
+  float: left;
+}
+
+.fl_r {
+  float: right;
+}
+
+.w10 {
+  width: 10%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w95 {
+  width: 95%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+/*边框*/
+
+.bte {
+  border-top: 1px solid #eee;
+}
+
+.bbe {
+  border-bottom: solid 1px #eee;
+}
+
+.bre {
+  border-right: 1px solid #eee;
+}
+
+.ble {
+  border-left: 1px solid #eee;
+}
+
+.footfixed {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #eee;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.foot {
+  display: block;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.foot2 {
+  display: block;
+  position: fixed;
+  bottom: 4px;
+  left: 0;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.button {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  background: #eee;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+}
+
+.button2 {
+  display: block;
+  position: fixed;
+  bottom: 2px;
+  background: #eee;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+}
+
+.cl_h {
+  clear: both;
+  height: 1px;
+  margin-top: 60px;
+}
+
+.shop {
+  position: relative;
+}
+
+.video {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.video image {
+  width: 45px;
+  height: 45px;
+  background-size: 45px;
+}
+
+.search_no {
+  width: 100%;
+  display: block;
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+}
+
+.scimg {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-size: 100px;
+}
+
+.x_right {
+  width: 16px;
+  height: 18px;
+  margin-left: 10px;
+}
+
+button[type="warn"] {
+  color: #fff;
+  background-color: #d9002f;
+}
+
+button {
+  border-radius: 0px;
+}
+
+.buttom {
+  border-bottom: 10px solid #eee;
+}
+
+.hr {
+  border-bottom: 2px solid #eee;
+}
+
+.bt10 {
+  margin-bottom: 10px;
+}
+
+.le10 {
+  margin-left: 10px;
+}
+
+.le20 {
+  margin-left: 20px;
+}
+
+.le40 {
+  margin-left: 40px;
+}
+
+.le5 {
+  margin-left: 5px;
+}
+
+.le15 {
+  margin-left: 15px;
+}
+
+.le50 {
+  margin-left: 50px;
+}
+
+.le70 {
+  margin-left: 70px;
+}
+
+.on {
+  color: #27aec1;
+  border-bottom: 5rpx solid #27aec1;
+}
+
+.inline {
+  display: inline-block;
+}
+
+/*超出后隐藏*/
+
+.hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hidden2 {
+  overflow: hidden;
+}
+
+.weight {
+  font-weight: 600;
+}
+
+.we50 {
+  font-weight: 500;
+}
+
+.we30 {
+  font-weight: 300;
+}
+
+.weight4 {
+  font-weight: 400;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.bt {
+  background: #27aec1;
+  width: 95%;
+  color: #fff;
+}
+
+.btw1 {
+  background: #27aec1;
+  width: 113px;
+  color: #fff;
+}
+
+.he40 {
+  height: 49px;
+  line-height: 49px;
+}
+
+/*menu list*/
+
+/* pages/user/dingdan.wxss 
+  
+  */

@@ -1,0 +1,10 @@
+.page{
+  background: #FFF;
+}
+.list{
+  height: 58px;
+}
+.p_le25{
+  padding-left:25px;
+
+}

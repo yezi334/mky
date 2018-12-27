@@ -1,0 +1,43 @@
+<!--pages/user/dingdan.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" data-otype="pay" bindtap="swichNav">直属</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-otype="deliver" bindtap="swichNav">隶属</view>
+</view>
+<view class="c_t60"></view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px">
+  <!-- 直属 -->
+  <swiper-item>
+    <view class="search_no" wx:if="{{!orderList0.length}}">
+      <view class="font_14">
+        <image class="scimg" src="{{item.avatarurl}}"></image>
+      </view>
+      <text>没有人/(ㄒoㄒ)/~~</text>
+    </view>
+    <view class="shop df" wx:for="{{orderList0}}" wx:key="*this"  bindtap='tohy' data-uid="{{item.id}}" data-fxlevel="0">
+      <image class="weiima" src="{{item.avatarurl}}" wx:if="{{item.avatarurl}}"></image>
+      <image class="weiima" src="/images/my/tx.jpg" wx:else></image>
+      <view class="df_1">
+        <text class="c3 font_17" wx:if="{{item.name}}" >{{item.name}}</text>
+      </view>
+    </view>
+    <view class="mt10 tc c3 font_17" wx:if="{{orderList0.length}}">共有{{count0}}个直属会员</view>
+  </swiper-item>
+  <!-- 隶属 -->
+  <swiper-item>
+    <view class="search_no" wx:if="{{!orderList1.length}}">
+      <view class="font_14">
+        <image class="scimg" src="{{item.avatarurl}}"></image>
+      </view>
+      <text>没有人/(ㄒoㄒ)/~~</text>
+    </view>
+    <view class="shop df" wx:for="{{orderList1}}" wx:key="*this"  bindtap='tohy' data-uid="{{item.id}}" data-fxlevel="1">
+       <image class="weiima" src="{{item.avatarurl}}" wx:if="{{item.avatarurl}}"></image>
+      <image class="weiima" src="/images/my/tx.jpg" wx:else></image>
+      <view class="df_1">
+        <text class="c3 font_17" wx:if="{{item.name}}">{{item.name}}</text>
+      </view>
+    </view>
+    <view class="mt10 tc c3 font_17" wx:if="{{orderList1.length}}">共有{{count1}}个隶属会员</view>
+  </swiper-item>
+
+</swiper>

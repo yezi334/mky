@@ -1,0 +1,21 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+  <view class="hr list  font_14" wx:for="{{list}}">
+    <view class="inline mt10">
+      <view class="p_le10 c3 font_14 ">提现</view>
+      <view class="p_le10 c6 font_12 mt8 ">{{item.addtime}}</view>
+    </view>
+    <view class="inline fl_r mt10">
+      <view class="p_le10 ">
+        <text class='c3' style="padding-left:10px" wx:if="{{item.type == 1}}">-</text> 
+        <text class=" p_ri10  c3 font_14">{{item.money}}</text>
+      </view>
+      <view class=" p_le25 blue font_12 mt8" wx:if="{{item.status==1}}">进行中</view>
+      <view class=" p_le25 blue font_12 mt8" wx:elif="{{item.status==2}}">取消</view>
+        <view class=" p_le25 blue font_12 mt8" wx:elif="{{item.status==3}}">已到账</view>
+       <view class=" p_le25 blue font_12 mt8" wx:else>提现失败</view>
+    </view>
+
+  </view>
+
+</view>

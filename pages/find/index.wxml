@@ -1,0 +1,61 @@
+<!-- index.wxml -->
+
+<view class="page">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:750rpx;height:187px;" indicator-color="#27aec1">
+    <block wx:for="{{imgUrls}}" wx:key="*this" >
+      <swiper-item>
+        <image src="{{item.photo}}" class="slide-image" width="100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 广告轮播 -->
+
+  <view style="display:flex;height:44px" class="buttom">
+    <view style='width:33px;height:23px;margin-top:10px;margin-left:10px;'>
+      <image src="/images/my/tz.png" class="tb"></image>
+    </view>
+    <view style='width:40px;height:45px;color:#303030;font-size:15px;margin-top:5px;line-height:17px;'>
+      <text class="text weight">活动</text>
+      <text class="text2 weight">通知</text>
+    </view>
+    <view style='width:80%;height:50px;margin-top:15px'>
+      <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="1000">
+        <block wx:for="{{activity}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper_item" style="font-size:14px;color:#303030">{{item.text}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+
+  <!-- 新闻 -->
+  <scroll-view scroll-y="true" class="nav_section" bindscrolltolower='bindDownLoad'>
+    <view wx:if="{{productData}}">
+      <block wx:for="{{productData}}" wx:key="item.id">
+
+        <navigator class="pr" url="../find/detail?productId={{item.id}}" hover-class="changestyle">
+          <view class="nav_section_items  " >
+
+            <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <view class="section_cont_sub font_17">
+                {{item.name}}
+              </view>
+              <view class="font_14 c6">{{item.intro}}</view>
+            </view>
+            <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <image src="{{item.photo}}" mode="aspectFill"></image>
+
+            </view>
+          </view>
+        </navigator>
+
+      </block>
+
+    </view>
+    <view wx:else>暂无数据</view>
+
+  </scroll-view>
+</view>

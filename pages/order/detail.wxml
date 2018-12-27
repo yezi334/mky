@@ -1,0 +1,101 @@
+<!--pages/order/detail.wxml-->
+<view class="w100">
+  <view class="top" wx:if="{{orderData.status == 10}}">
+    <view class='tx'>等待买家付款</view>
+    <!--<view class='tx'>剩余24小时自动关闭</view>l-->
+  </view>
+  <view class="top" wx:elif="{{orderData.status == 20}}">
+    <!--   <view class='tx' wx:if="{{proData.order == 1}}">预定成功！</view>-->
+    <view class='tx'>付款成功！</view>
+  </view>
+  <view class="top" wx:elif="{{orderData.status == 60}}">
+    <view class='tx'>预定成功！</view>
+  </view>
+  <view class="top" wx:elif="{{orderData.status == 30}}">
+    <view class='tx'>卖家已发货</view>
+    <view class='tx'>您的包裹正在路上，请耐心等候！</view>
+  </view>
+  <view class="top" wx:elif="{{orderData.status == 50}}">
+    <view class='tx'>订单已完成</view>
+    <view class='tx'>感谢您在美科云消费，欢迎下次光临！</view>
+  </view>
+  <view class="top" wx:else>
+    <view class='tx'>等待商家处理</view>
+    <view class='tx'>请您耐心等候1-2个工作日</view>
+  </view>
+  <view class=" bg_white  item buttom">
+    <view class="inline gm_ovh_1h p_top10 font_16 le40">
+      <text>{{store.name}}</text>
+      <text class='p_le5'>{{store.tel}}</text>
+    </view>
+    <view class="le10">
+      <image src="/images/my/dz.png" style="width:20px;height:26px"></image>
+      <view class="font_14 c6  hidden w80 inline le10" style="height:18px">
+        {{store.province}}{{store.county}}{{store.city}}{{store.address}}
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="bg_white df item hr  mt10 ">
+      <view class="cp_photo bt10 le15">
+        <image src="{{proData.photo_x}}" class="cp_photo"></image>
+      </view>
+      <view class="df_1">
+        <view class="font_17 mt10 ovh1 c3 le10 weight">
+          {{proData.name}}
+        </view>
+        <text class="font_14 c6">  {{proData.intro}}</text>
+      </view>
+    </view>
+    <view class='hr'>
+      <view class="sp_neb">
+        <text class="text1">统一价：</text>
+        <text class="text2">¥ {{proData.price}}</text>
+      </view>
+      <view class="sp_neb">
+        <text class="text1">实付款：</text>
+        <text class="text2">¥ {{orderData.paymoney}}</text>
+      </view>
+      <view class="sp_neb">
+        <text class="text1">积分抵扣：</text>
+        <text class="text2">¥ {{orderData.jifen/1000}}</text>
+      </view>
+      <view class="sp_neb">
+        <text class="text1 c3">订单总价</text>
+        <text class="text2">¥ {{orderData.money}}</text>
+      </view>
+    </view>
+    <view class="buttom">
+      <view class="sp_neb2">
+        <text class="text1">需付款</text>
+        <text class="text3">¥ {{orderData.money-orderData.paymoney}}</text>
+      </view>
+    </view>
+    <view style="height:43px;line-height:43px;" class="p_le10 buttom">
+      <text style="font-size:13px;color:#27aec1;border:1px solid #27aec1;border-radius:2px;padding:4px">积分</text>
+      <text style="margin-left:10px;" class='font_14'>返积分<text class='blue'>{{proData.price_jf}}</text></text>
+    </view>
+    <view style="color:#606060;font-size:10px" class="hr p_le10 ">
+      <view class="left hf">
+        订单编号：{{orderData.order_sn}}
+      </view>
+      <view class="left hf">
+        创建时间：{{orderData.addtime}}
+      </view>
+      <view class="left hf" wx:if="{{orderData.status == 20}}">
+        付款时间：{{orderData.time}}
+      </view>
+    </view>
+    <view class="buttom" bindtap="phoneCall" style="vertical-align:middle;height:45px">
+      <image src="/images/my/mj.png" style="width:20px;height:25px;margin-left:30%;" class='mt10'></image>
+      <view style="padding-left:8px; position: relative;top:-7px" class='inline font_15 c3 '>联系卖家</view>
+    </view>
+  </view>
+  <view style="margin-top:10px;float:right;margin-right:15px;" wx:if="{{orderData.status == 10}}">
+    <text style="font-size:13px;color:#27aec1;border:1px solid #27aec1;border-radius:4px;padding:4px" data-id="{{orderData.id}}" bindtap="remove">取消订单</text>
+    <text style="font-size:13px;color:#27aec1;border:1px solid #27aec1;border-radius:4px;padding:4px 10px;;margin-left:10px" bindtap="wxpay" data-order="{{orderData.order_sn}}">去付款</text>
+  </view>
+  <view style="margin-top:10px;float:right;margin-right:15px;" wx:if="{{orderData.status == 20}}">
+    <text style="font-size:13px;color:#27aec1;border:1px solid #27aec1;border-radius:4px;padding:4px" data-order="{{orderData.id}}" bindtap="confirm">确认订单</text>
+  </view>
+</view>

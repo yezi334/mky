@@ -1,0 +1,90 @@
+<view>
+  <view class="huise">
+    <view class="zhifu hidden" style="display:flex" style='height:{{height}}px;line-height:{{height}}px'>
+      <view class='le inline'> 储存人：
+        <text wx:if="{{store.id}}">{{store.name}}</text>
+        <text wx:if="{{store.id}}" class="le10">{{store.tel}}</text>
+      </view>
+      <view class='right p_ri10 inline'>
+        <text bindtap="toadd" data-id="{{item.id}}">新增/更换</text>
+      </view>
+    </view>
+    <view class="buttom"></view>
+    <view class="w100 buttom">
+      <view class="df item">
+        <view class="cp_photo">
+          <image src="{{item.photo_x}}" class="le10"></image>
+        </view>
+        <view class="df_1 le10">
+          <view class="mt8 ovh1 name c3 font_17">
+            {{item.name}}
+          </view>
+          <view class="mt8 ovh1 name c6 font_14">
+            {{item.intro}}
+          </view>
+          <view class="mt8 ovh1 name c3 font_17 ">
+            全国统一价：
+            <text class='right p_ri10' style="color:#27aec1;font-weight:600">￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="zhifu" style='height:{{height}}px;line-height:{{height}}px'>
+      <text class='le'> vip卡券：</text>
+      <text class=" right"> 无</text>
+    </view>
+    <view class='hr'></view>
+    <view class="zhifu" style='height:{{height}}px;line-height:{{height}}px'>
+      <text class='le'> vip折扣：</text>
+
+      <text wx:if="{{user.level == 1  && item.order!=1}}" class="right"> 9折 </text>
+      <text wx:elif="{{user.level == 2 && item.order!=1 }}" class="right"> 8折 </text>
+      <text wx:elif="{{user.level == 3 && item.order!=1}}" class="right"> 7折 </text>
+      <text wx:else class="right"> 无 </text>
+    </view>
+    <view class='buttom'></view>
+    <view class="zhifu" style='height:{{height}}px;line-height:{{height}}px'>
+      <text class='le'> 积分：</text>
+      <text class="font_20 right">{{user.jifen}}</text>
+    </view>
+    <view class='hr'></view>
+    <view class="zhifu" style='height:{{height}}px;line-height:{{height}}px'>
+      积分抵扣：
+      <view class='fl_r'>
+        <switch bindchange="switch1Change" data-money="{{needpay}}" data-jifen="{{user.jifen}}" />
+      </view>
+    </view>
+    <view class='buttom'></view>
+    <view class="zhifu" style='height:{{height}}px;line-height:{{height}}px'>
+      <text class='le'>   电子发票：</text>
+      <view class='fl_r an'>
+        <switch bindchange="switch2Change" />
+      </view>
+    </view>
+    <view class='hr'></view>
+    <view class="p_all font_14" style='height:30px;line-height:30px'>
+      <input type="text" name="remark" placeholder="留言" value="{{remark}}" bindinput='getremarkValue' />
+    </view>
+    <view class='hr'></view>
+    <view class="zhifu" style='height:{{height}}px;line-height:{{height}}px'>
+      <text class='le'>   应付款：</text>
+      <text class="font_20 bule" style="float:right;color:#27aec1;font-weight:600"> {{needpay}}</text>
+    </view>
+    <view class='buttom'></view>
+
+  </view>
+
+  <view class="foot2">
+    <checkbox-group bindchange="checkbox" class="check">
+      <view class='c6 font_12'>
+        <checkbox value="是否匿名" />
+        <text style='padding-left:5px'>我已阅读并同意</text>
+      </view>
+    </checkbox-group>
+    <navigator url="../order/xbxy?xy=2" hover-class="none">
+      <text class="c3 font_12 p_le5">《细胞储存服务协议》
+      </text>
+    </navigator>
+  </view>
+  <button class=" button2 bg_bule" style="opacity: {{opacity}};color: white; background-color: #27aec1;width:138px;float:right" bindtap="createProductOrderByWX" data-id="{{item.id}}" disabled="{{disabled}}">立即支付</button>
+</view>

@@ -1,0 +1,72 @@
+ <view class='page'>
+  <form bindsubmit="reg">
+    <view class="xing">姓名
+      <input placeholder-class='placeholder' placeholder='请输入真实姓名' class="in" name="name" value="{{userinfo.name}}" disabled='{{able}}'/>
+    </view>
+    <view class="hr"></view>
+        <view bindtap="actionSheetTap" class="xing">性别
+             <view class=" in" name='tel' >{{sex}}</view>
+        <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange" >
+          <block wx:for-items="{{actionSheetItems}}">
+            <action-sheet-item data-sex="{{item.sex}}" bindtap="bindsex">{{item.txt}}</action-sheet-item>
+          </block>
+          <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+        </action-sheet>
+ </view>
+    <view class="hr"></view>
+    <view class="xing">手机号
+      <input placeholder-class='placeholder' disabled='{{able}}' type="number" placeholder='请输入您的手机号码' class="in" name='tel' maxlength="11" value="{{userinfo.tel}}" />
+    </view>
+    <view class="hr"></view>
+    <view class="xing">身份证号码
+      <input placeholder-class='placeholder' type="idcard" placeholder='请输入您的身份证号码' class="in"  name='id_num' disabled='{{able}}'  maxlength="18" value="{{userinfo.id_num}}"  />
+    </view>
+    <view class="buttom"></view>
+    <view class="xing">所属区域
+     
+   <!--  <input placeholder-class='placeholder' placeholder='请输入您的所属区域' class="in" name='area' value="{{userinfo.area}}" />>-->
+
+
+    <text bindtap="open" class="in">{{province}}-{{city}}-{{county}}</text>
+  <view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <button bindtap="open" class="city-cancel">取消</button>
+      <button bindtap="open" class="city-true">确定</button>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+    </view>
+    <view class="hr"></view>
+    <view class="xing">详细地址
+      <input placeholder-class='placeholder' placeholder='请输入您的详细地址' class="in" name='address' value="{{userinfo.address}}" disabled='{{able}}' />
+    </view>
+     <view class="hr"></view>
+
+
+
+    <!--  <view wx:if="{hascard==true}}">
+      <view class="xing">银行卡卡号{{hascard}}
+        <input placeholder-class='placeholder' type="number" placeholder='请输入您的银行卡号码' class="in" name='card' value="{{userinfo.card}}" wx:if="{hascard==true}}" />
+      </view>
+      <view class="hr"></view>
+      <view class="xing">所属银行
+        <input placeholder-class='placeholder' placeholder='请选择所属银行' class="in" name='blank' value="{{userinfo.blank}}" wx:if="{hascard==false}}" />
+      </view></view>-->
+<view  style="height:50px"></view>
+    <view   style="display:hidden" >
+      <button type="" form-type="submit" hover-class='button-hover' style="opacity: {{opacity}};" disabled="{{disabled}}" class='su'>保存并使用</button>
+
+    </view>
+  </form>
+</view>

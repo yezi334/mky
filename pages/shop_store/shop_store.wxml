@@ -1,0 +1,12 @@
+ <view class="footfixed tc bg_bule">
+      <view >
+        <view bindtap="actionSheetTap" class="bg_bule white">升级会员</view>
+        <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+          <block wx:for-items="{{actionSheetItems}}">
+            <action-sheet-item data-level="{{item.level}}" bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+          </block>
+          <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+        </action-sheet>
+      </view>
+      
+    </view>

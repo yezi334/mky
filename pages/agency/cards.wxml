@@ -1,0 +1,39 @@
+    <form bindsubmit="formSubmit" bindreset="formReset">  
+<view class="page-body">
+ <view class="page-section">
+    <view class="weui-cells__title">银行</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="cards" auto-focus placeholder="邀请人"/>
+          
+      </view>
+    </view>
+  </view>
+ <view class="page-section">
+    <view class="weui-cells__title">姓名</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input"  type='number' name="name" auto-focus placeholder="输入姓名"/>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">账户</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" name="phone" placeholder="输入手机号码" />
+      </view>
+    </view>
+  </view>
+    <view class="page-section">
+    <view class="weui-cells__title">支行</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" name="subbranch" placeholder="输入手机号码" />
+      </view>
+    </view>
+  </view>
+  <button class="clear mt10" formType="submit">提交</button>  
+
+</view>
+</form>

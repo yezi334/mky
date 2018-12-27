@@ -1,0 +1,70 @@
+page {
+  height: 100%;
+  width: 100%;
+}
+
+
+.container {
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+.xing {
+  font-family: "微软雅黑", "黑体";
+  height: 54rpx;
+  width: 87%;
+  background: #fff;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 54rpx;
+  font-size: 28rpx;
+  padding: 10rpx;
+  margin-top: 38rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #bbb;
+}
+
+.xi {
+  font-family: "微软雅黑", "黑体";
+  height: 200rpx;
+  width: 579rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 54rpx;
+  font-size: 28rpx;
+  padding: 10rpx;
+  margin-top: 38rpx;
+  padding-left: 30rpx;
+}
+
+.placeholder {
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+.in {
+  float: right;
+  width: 70%;
+  padding-top: 0rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+.changeBtn {
+  height: 44px;
+  background: #27aec1;
+  color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 60%;
+  width: 95%;
+  line-height: 44px;
+  margin-left: 2%;
+}

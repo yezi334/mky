@@ -1,0 +1,50 @@
+page {
+  background: #eee;
+}
+
+.swiper-tab {
+  width: 100%;
+  border: 1rpx solid #eee;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.swiper-tab-list {
+  font-size: 16px;
+  display: inline-block;
+  width: 30%;
+  color: #606060;
+}
+.ct{
+  height:10px;
+  background: #fff;
+}
+.vou {
+  background: #fff;
+  height:258px;
+}
+
+.on {
+  color: #27aec1;
+  border-bottom: 3px solid #27aec1;
+  width: 30%;
+  font-weight: 600;
+}
+
+.img {
+  border-radius: 15px;
+  height:211px;
+}
+
+.times {
+  padding-left: 6%;
+  line-height:37px;
+
+}
+.ts {
+  font-weight: 600;
+}

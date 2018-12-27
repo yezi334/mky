@@ -1,0 +1,87 @@
+.cont {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.xing {
+  margin-left: 10px;
+  height: 44px;
+  text-align: left;
+  line-height: 44px;
+  font-size: 14px;
+  width: 100%;
+  color: #303030;
+}
+
+/**遮盖层**/
+
+.placeholder {
+  color: #c1c1c1;
+  font-size: 14px;
+}
+
+.in {
+  float: right;
+  width: 70%;
+  padding-top: 0rpx;
+  font-size: 14px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.foot {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.add {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.close {
+  float: right;
+  line-height: 15px;
+  height: 15px;
+  padding-right: 10px;
+}
+
+/*隐藏滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.jiantou {
+  float: right;
+  padding-right: 10px;
+  font-size: 24px;
+}
+.changeBtn {
+  height: 44px;
+  background: #27aec1;
+  color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 60%;
+  width: 95%;
+  line-height: 44px;
+  margin-left: 2%;
+}

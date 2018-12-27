@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/agency/team",
+    "pages/agency/record",
+    "pages/code/index",
+    "pages/cash/record",
+    "pages/agency/index",
+    "pages/cash/index",
+    "pages/user/user",
+    "pages/user/dingdan",
+    "pages/agency/hydd",
+    "pages/user/info",
+    "pages/user/index",
+    "pages/code/intro",
+    "pages/user/member",
+    "pages/order/pay",
+    "pages/cash/addcard",
+    "pages/find/index",
+    "pages/user/pay",
+    "pages/product/detail",
+    "pages/info/index",
+    "pages/info/info",
+    "pages/user/success",
+    "pages/order/xbxy",
+    "pages/order/detail",
+    "pages/user/myxb",
+    "pages/code/ewm",
+    "pages/address/address",
+    "pages/address/use-addtress/use-address",
+    "pages/rituall/rituall",
+    "pages/rituall/record",
+    "pages/user/tuihuo",
+    "pages/find/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "美科云",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#303030",
+    "selectedColor": "#27aec1",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/my/index1.png",
+        "selectedIconPath": "images/my/index2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "iconPath": "images/my/find1.png",
+        "selectedIconPath": "images/my/find2.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/my/my1.png",
+        "selectedIconPath": "images/my/my2.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

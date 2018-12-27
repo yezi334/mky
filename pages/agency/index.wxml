@@ -1,0 +1,82 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+  <view class="userinfo">
+    <view>
+      <image src="/images/my/dlbg.png" class='bg'></image>
+    </view>
+    <view class='pa p1'>
+      <text>推荐人：</text>
+      <text wx:if="{{pid}}">{{pid}}</text>
+    </view>
+    <view class='pa p2 font_16'>
+      <text class="tc">累积津贴</text>
+    </view>
+    <view class=" pa p3 font_18">
+      <text wx:if="{{user.money}}">￥{{user.money}}</text>
+      <text wx:else>0(元）</text>
+    </view>
+    <view class="pa  w100 fl_l p4">
+      <view class='w50 tc fl_l'>
+        <text class=' tx ' style="color：blue">
+        可提现:  </text>
+           <text wx:if="{{user.money}}">￥{{user.money}}</text>
+      <text wx:else>0(元）</text>
+      </view>
+      <view class='w50 fl_l tc'>
+        <text class='tx ' style="color：blue">
+        已提现:  </text>
+        <text wx:if="{{user.cash}}">￥{{user.cash}}</text>
+      <text wx:else>0(元）</text>
+      </view>
+      <!--  <span class='tx' style="color：blue">
+        可提现:
+           <text wx:if="{{comm.all}}">￥{{comm.all}}</text>
+      <text wx:else>0(元）</text>
+      </span>
+      <span class='tx' style="color：blue;padding-left:50px">已经提现：
+        <text wx:if="!{{comm.alreadyl}}">0(元）</text>
+        <text wx:else>￥{{comm.alreadyl}}(元）</text>
+      </span> <navigator url="../agency/hydd?fxlevel=3"> </navigator>-->
+
+    </view>
+  </view>
+  <view class='pa w100 ' style="margin-top:-5px">
+   
+      <view class="tableviewcell" bindtap='tohydd'>
+        <image src="/images/my/hydd.png" />
+        <text class='p_le10'>会员订单</text>
+      </view>
+   
+    <view class="tableviewcell" bindtap='toteam'>
+      <image src="/images/my/td.png" />
+      <text class='p_le10'>我的团队</text>
+    </view>
+    <view class="tableviewcell" bindtap='tocode'>
+      <image src="/images/my/tjm.png" />
+      <text class='p_le10'>推荐码</text>
+    </view>
+    <navigator url="../code/ewm">
+      <view class="tableviewcell">
+        <image src="/images/my/ewm.png" />
+        <text class='p_le10'>推荐二维码</text>
+      </view>
+    </navigator>
+    <navigator url="../cash/record">
+      <view class="tableviewcell">
+        <image src="/images/my/txmx.png" />
+        <text class='p_le10'>提现明细</text>
+      </view>
+    </navigator>
+    <navigator url="../agency/record">
+      <view class="tableviewcell">
+        <image src="/images/my/jfzh.png" />
+        <text class='p_le10'>积分账户</text>
+      </view>
+    </navigator>
+  </view>
+  <navigator url="../cash/index">
+    <view class="footfixed tc">
+      <button class="wx_pay_submit">提现</button>
+    </view>
+  </navigator>
+</view>
