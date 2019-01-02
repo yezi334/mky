@@ -7,12 +7,12 @@
     </view>
     <view class="inline fl_r mt10 p_ri15">
       <view class="p_le10 blue tc">
-        <text  style="padding-left:10px" wx:if="{{item.status == 2}}">-</text> 
+        <text  style="padding-left:10px" wx:if="{{item.status == 1}}">-</text> 
           <text style="padding-left:10px" wx:else>+</text> 
         <text class=" p_ri10   font_14 ">{{item.times}}</text>
       </view>
-      <view class=" p_le25  font_12 mt8" wx:if="{{item.status==1}}">系统赠送</view>
-      <view class=" p_le25  font_12 mt8" wx:elif="{{item.status==2}}">使用</view>
+      <view class=" p_le25  font_12 mt8" wx:if="{{item.status==1}}">使用</view>
+      <view class=" p_le25  font_12 mt8" wx:elif="{{item.status==2}}">系统赠送</view>
         <view class=" p_le25  font_12 mt8" wx:elif="{{item.status==0}}">充值会员赠送</view>
        <view class=" p_le25  font_12 mt8" wx:else></view>
     </view>

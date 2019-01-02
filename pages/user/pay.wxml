@@ -1,6 +1,5 @@
 <!--pay.wxml-->
 <view class="huise">
-
 <form name='pushMsgFm' report-submit='true' bindsubmit='getFormID'>
   <view class="w100 buttom">
     <view class="df item">
@@ -16,7 +15,7 @@
         </view>
         <view class="mt5 ovh1 name c3 font_17 ">
           全国统一价：
-          <text class='right p_ri10 we30' style="color:#27aec1;font-eight:600">￥{{item.money}}</text>
+          <text class='right p_ri10 we30' style="color:#27aec1;font-weight:600">￥{{item.money}}</text>
         </view>
       </view>
     </view>
@@ -58,24 +57,13 @@
   <view class='hr'></view>
   <view class="zhifu">
     <text class='le'>   应付款：</text>
-    <text class="font_20" style="float:right;color:#27aec1;font-eight:600"> {{needpay}}</text>
+    <text class="font_20" style="float:right;color:#27aec1;font-weight:600"> {{needpay}}</text>
   </view>
   <view class='buttom'></view>
   <view class='mt50'>
-    <view class="inline p_le10">
-      <checkbox-group bindchange="checkbox" class="check inline ">
-        <view class='c6 font_12'>
-          <checkbox value="是否匿名" />我已阅读并同意
-        </view>
-      </checkbox-group>
-      <navigator url="../order/xbxy?xy=3" hover-class="none">
-        <text class="c3 font_12">《会员协议》
-      </text>
-      </navigator>
-    </view>
 
-  <view  class="inline fl_r p_ri10"> <button class=" bg_bule inline" style="opacity: {{opacity}};color: white; background-color: #27aec1;width:180px;float:right"  form-type="submit" data-id="{{item.id}}"  report-submit="true">立即支付</button></view>
-   </view>
+   <button class=" bg_bule" style="opacity: {{opacity}};color: white; background-color: #27aec1;"  form-type="submit" data-id="{{item.id}}"  report-submit="true" disabled="{{disabled}}">立即支付</button></view>
+  
    
 </form>  
 </view>

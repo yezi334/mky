@@ -3,7 +3,7 @@
 <view class="cont">
   <import src="../../wxParse/wxParse.wxml" />
   <view class="wxParse">
-    <scroll-view style="height:2000rpx;" scroll-y='true'>
+    <scroll-view style="height:{{winHeight+40}}px;" scroll-y='true'>
       <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </scroll-view>
   </view>

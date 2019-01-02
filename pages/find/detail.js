@@ -6,14 +6,16 @@ var WxParse = require('../../wxParse/wxParse.js');
 Page({
   firstIndex: -1,
   data: {
-   
+    winHeight:app.d.winHeight,
   },
   // 传值
   onLoad: function (options) {
     //this.initNavHeight();
     var that = this;
+    var winHeight = app.d.winHeight;
     that.setData({
       productId: options.productId,
+      winHeight: winHeight
     });
   
     that.loadProductDetail();
@@ -42,7 +44,7 @@ Page({
           WxParse.wxParse('content', 'html', content, that, 3);
         } else {
           wx.showToast({
-            title: res.data.err,
+            title: "网络错误",
             duration: 2000,
           });
         }
@@ -57,10 +59,20 @@ Page({
   },
   // 属性选择
 
-  // 分享链接
   onShareAppMessage: function (res) {
-    comm.share(res);
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+   //   console.log(res.target)
+    }
+    var uid = app.d.uid;
+    return {
+      title: '美科',
+      desc: '美科健康!',
+      path: '/pages/index/index?pid=' + uid
+    }
+    wx.showShareMenu({
+      withShareTicket: true
+    })
   },
-
 
 });

@@ -3,20 +3,19 @@
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">基本账户</view>
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">奖励账户</view>
-    
+    <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+
   </view>
   <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
-
     <swiper-item>
-
       <view class="userinfo">
         <view>
           <image src="/images/my/jfbg.png" class='bg'></image>
         </view>
         <view class="pa blue circle">
- <view class='circle2'>
-          <view class='blue font_14' style='position: relative;top:25px'>积分</view>
-          <view class="" style='  position: relative;top:30px'>{{jf}}</view>
+          <view class='circle2'>
+            <view class='blue font_14' style='position: relative;top:25px'>积分</view>
+            <view class="" style='  position: relative;top:30px'>{{jf}}</view>
           </view>
         </view>
       </view>
@@ -25,6 +24,9 @@
           <text>积分明细</text>
         </view>
         <scroll-view style="height:{{winHeight - 268}}px" scroll-y>
+        <view class="search_no" wx:if="{{!list.length}}">
+          <text>暂时没有积分/(ㄒoㄒ)/~~！</text>
+        </view>
           <view class="bg hr list  font_14" wx:for="{{list}}">
             <text class="p_le10 c3">{{item.addtime}}</text>
             <view class="inline fl_r">
@@ -43,33 +45,33 @@
         <view>
           <image src="/images/my/jfbg.png" class='bg'></image>
         </view>
-          <view class='xy' bindtap='toxy'>?</view>
+        <view class='xy' bindtap='toxy'>?</view>
         <view class="pa blue circle">
-        <view class='circle2'>
-          <view class='blue font_12' style='position: relative;top:30px'>积分</view>
-          <view class='blue font_14' style='position: relative;top:30px'>
-            <text wx:if="{{jifen.directly}}">{{jifen.directly}}</text>
-            <text wx:else>0</text>
-          </view>
+          <view class='circle2'>
+            <view class='blue font_12' style='position: relative;top:30px'>积分</view>
+            <view class='blue font_14' style='position: relative;top:30px'>
+              <text wx:if="{{jifen.directly}}">{{jifen.directly}}</text>
+              <text wx:else>0</text>
+            </view>
           </view>
         </view>
         <view class="pa blue circle3">
-        <view class='circlex'>
-          <view class='blue font_12' style='position: relative;top:30px'>可兑换积分</view>
-          <view class='blue font_14' style='  position: relative;top:30px'>
-            <text wx:if="{{jifen.exchange}}">{{jifen.exchange}}</text>
-            <text wx:else>0</text>
-          </view>
+          <view class='circlex'>
+            <view class='blue font_12' style='position: relative;top:30px'>可兑换积分</view>
+            <view class='blue font_14' style='  position: relative;top:30px'>
+              <text wx:if="{{jifen.exchange}}">{{jifen.exchange}}</text>
+              <text wx:else>0</text>
+            </view>
           </view>
         </view>
         <view class="pa blue circle4">
-        <view class='circlex'>
-          <view class='blue font_12' style='position: relative;top:30px'>可转化佣金</view>
-          <view class='blue font_14' style='  position: relative;top:30px'>
-            <text wx:if="{{jifen.money}}">{{jifen.money}}</text>
-            <text wx:else>0</text>
+          <view class='circlex'>
+            <view class='blue font_12' style='position: relative;top:30px'>可转化佣金</view>
+            <view class='blue font_14' style='  position: relative;top:30px'>
+              <text wx:if="{{jifen.money}}">{{jifen.money}}</text>
+              <text wx:else>0</text>
+            </view>
           </view>
-        </view>
         </view>
       </view>
       <view class='detail pa'>
@@ -78,24 +80,27 @@
           <view class="swiper-tab-list2 {{currentTab==2 ? 'on2' : 'white'}}" data-current="2" data-fxlevel="1" bindtap="swichNav2">隶属</view>
         </view>
         <view class="bg" style="height:10px;"></view>
-         <scroll-view style="height:{{winHeight - 268}}px" scroll-y>
-        <view class="bg row" wx:for="{{listt}}">
-          <view class="mt10 p_le15 w90  ">
-            <view class='inline p_top10 w75'>
-              <view class='tx' wx:for="{{item}}">
-                <image class='touxiang' src="{{item.avatarurl}}"></image>
-                <view class='hy tc' wx:if="{{item.alevel==1}}"> vip</view>
-                <view class='hy tc' wx:elif="{{item.alevel==2}}"> 白金</view>
-                <view class='hy tc' wx:else> 钻石</view>
-                <view class='name'>{{item.name}}</view>
+          <view class="search_no" wx:if="{{!listt.length}}">
+          <text>暂时没有积分/(ㄒoㄒ)/~~！</text>
+        </view>
+        <scroll-view style="height:{{winHeight - 268}}px" scroll-y>
+          <view class="bg row" wx:for="{{listt}}">
+            <view class="mt10 p_le15 w90  ">
+              <view class='inline p_top10 w75'>
+                <view class='tx' wx:for="{{item}}">
+                  <image class='touxiang' src="{{item.avatarurl}}"></image>
+                  <view class='hy tc' wx:if="{{item.alevel==1}}"> VIP</view>
+                  <view class='hy tc' wx:elif="{{item.alevel==2}}"> 白金</view>
+                  <view class='hy tc' wx:else> 钻石</view>
+                  <view class='name'>{{item.name}}</view>
+                </view>
+              </view>
+              <view class="fl_r duihuan mt20" disabled="{{disabled}}">
+                <button style="opacity: {{opacity}};color: white; background-color: #27aec1;width:80px;float:right;font-size:16px" disabled="" bindtap="exchange" data-index="{{index}}" data-fxlevel="0">兑换</button>
               </view>
             </view>
-            <view class="fl_r duihuan mt20" disabled="{{disabled}}">
-              <button style="opacity: {{opacity}};color: white; background-color: #27aec1;width:80px;float:right;font-size:16px" disabled="" bindtap="exchange" data-index="{{index}}" data-fxlevel="0">兑换</button>
-            </view>
           </view>
-        </view>
-          </scroll-view>
+        </scroll-view>
       </view>
     </swiper-item>
     <swiper-item>
@@ -104,10 +109,10 @@
           <image src="/images/my/jfbg.png" class='bg'></image>
         </view>
         <view class='xy' bindtap='toxy'>?</view>
-    
+
         <view class="fl_l pa blue circle" style=''>
-          <view class='blue font_14' style='position: relative;top:35px'>可兑换佣金</view>
-          <view class="" style=' position: relative;top:35px'>
+          <view class='blue font_14' style='position: relative;top:35px;text-align:center'>可兑换佣金</view>
+          <view class="" style=' position: relative;top:35px;text-align:center'>
             <text wx:if="{{jifen.money}}">{{jifen.money}}</text>
             <text wx:else>0</text>
           </view>
@@ -119,15 +124,18 @@
           <view class="swiper-tab-list2 {{currentTab==1 ? 'on2' : 'white'}}" data-current="1" data-fxlevel="0" bindtap="swichNav2">直属</view>
           <view class="swiper-tab-list2 {{currentTab==2 ? 'on2' : 'white'}}" data-current="2" data-fxlevel="1" bindtap="swichNav2">隶属</view>
         </view>
-          <view class="bg" style="height:10px;"></view>
-           <scroll-view style="height:{{winHeight - 291}}px" scroll-y>
+        <view class="bg" style="height:10px;"></view>
+          <view class="search_no" wx:if="{{!listt.length}}">
+          <text>暂时没有积分/(ㄒoㄒ)/~~！</text>
+        </view>
+        <scroll-view style="height:{{winHeight - 291}}px" scroll-y>
           <view class="bg row2" wx:for="{{listt}}">
             <view class="mt10 p_le15 w90  ">
               <view class='inline p_top10 w75'>
                 <view class='blue font_16 pid1'>{{index}}:</view>
                 <view class='tx' wx:for="{{item}}" wx:for-item="it">
                   <image class='touxiang' src="{{it.avatarurl}}"></image>
-                  <view class='hy tc' wx:if="{{it.alevel==1}}"> vip</view>
+                  <view class='hy tc' wx:if="{{it.alevel==1}}"> VIP</view>
                   <view class='hy tc' wx:elif="{{it.alevel==2}}"> 白金</view>
                   <view class='hy tc' wx:else> 钻石</view>
                   <view class='name hidden'>{{it.name2}}</view>

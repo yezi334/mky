@@ -31,14 +31,12 @@ Page({
       isStatus: options.otype,
       pid: options.uid,
       fxlevel:options.fxlevel
-
     });
     if (options.fxlevel==3){
       wx.setNavigationBarTitle({
         title: '佣金明细'
       })
     }
-  
     this.loadOrderList();
   },
   getOrderStatus: function() {

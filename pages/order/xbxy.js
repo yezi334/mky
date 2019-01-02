@@ -25,7 +25,7 @@ Page({
       })
     } else if (options.xy == 2) {
       wx.setNavigationBarTitle({
-        title: '细胞协议'
+        title: '细胞储存服务协议'
       })
     }else{
       wx.setNavigationBarTitle({

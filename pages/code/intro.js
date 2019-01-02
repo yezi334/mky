@@ -4,7 +4,9 @@ Page({
   /** 
    * 页面的初始数据 
    */
-  data: {},
+  data: {
+    recomm: ''
+  },
 
   /** 
    * 生命周期函数--监听页面加载 
@@ -92,7 +94,7 @@ Page({
   /** 
    * 用户点击右上角分享 
    */
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)

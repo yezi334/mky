@@ -136,7 +136,7 @@ Page({
     that.setData({
       currType: currType
     });
-    console.log(currType);
+  //  console.log(currType);
     wx.request({
       url: app.d.ceshiUrl + '/Api/Index/getcat',
       method: 'post',

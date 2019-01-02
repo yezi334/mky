@@ -15,7 +15,7 @@ z-index:999;
 .swiper-tab-list {
   font-size: 16px;
   display: inline-block;
-  width: 20%;
+  width: 25%;
   background: #FFF;
   color: #606060;
 }
@@ -23,9 +23,17 @@ z-index:999;
 .on {
   color: #27aec1;
     font-weight: 600;
-  border-bottom: 3px solid #27aec1;
-}
 
+}
+.weui-navbar-slider {
+  position: relative;
+  width: 15%;
+  height: 8rpx;
+  background: #27aec1;
+  bottom:8rpx;
+  left:5%;
+  transition: transform 0.3s;
+}
 .nopg{
   width:147px;
   height:154px;

@@ -3,16 +3,16 @@
     <view>
       <image src="/images/my/bg.png" class='bg'></image>
     </view>
-    <view style="position:absolute;top:17px" class='tc'>
-      <view>
+    <view style="position:absolute;top:17px;left:40%" class='tc'>
+      <view class='tc'>
         <image class="userinfo-avatar" src="{{avatarUrl}}"></image>
       </view>
       <view class="mt7">
         <text>{{nickName}}</text>
       </view>
     </view>
-    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:if="{{user.level == 1}}">vip会员</view>
-    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:elif="{{user.level == 2}}">白银会员</view>
+    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:if="{{user.level == 1}}">VIP会员</view>
+    <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:elif="{{user.level == 2}}">白金会员</view>
     <view class="hy font_15 mt10 pa tp3" bindtap="tomember" wx:elif="{{user.level == 3}}">钻石会员</view>
     <view class="hy font_15 mt10 pa tp3 " bindtap="tomember" wx:else>
       <text>普通会员</text>
@@ -57,13 +57,20 @@
       <image src="/images/my/rz.png" />
       <text>商家入驻</text>
     </view>
-  </navigator>-->
+  </navigator>      <view class="footfixed tc"> 
+    <button class="wx_pay_submit" bindtap="remove" wx:if="{{hasphone==true}}">退出登录</button> 
+  </view> -->
+   <view class="footfixed tc"> 
+    <button class="wx_pay_submit" bindtap="remove" wx:if="{{hasphone==true}}">退出登录</button> 
+  </view>
     <navigator url="../rituall/rituall">
       <view class="tableviewcell">
         <image src="/images/my/kb.png" />
         <text>会员卡包</text>
       </view>
     </navigator>
+
+  
     <button class="wx_pay_submit mt25" bindgetuserinfo="bindGetUserInfo" bindtap="tocode" open-type="getUserInfo" wx:if="{{hasphone==false}}"> 绑定手机号码</button>
   </view>
 </view>

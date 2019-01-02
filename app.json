@@ -1,19 +1,22 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/agency/record",
+    "pages/user/user",
+    
     "pages/agency/team",
+    "pages/user/member",
+    "pages/user/index",
+    "pages/agency/record",
+    "pages/rituall/rituall",
+    
+    "pages/agency/index",
     "pages/code/index",
     "pages/cash/record",
-    "pages/agency/index",
     "pages/cash/index",
-    "pages/user/user",
     "pages/user/dingdan",
     "pages/agency/hydd",
     "pages/user/info",
-    "pages/user/index",
     "pages/code/intro",
-    "pages/user/member",
     "pages/order/pay",
     "pages/cash/addcard",
     "pages/find/index",
@@ -28,7 +31,6 @@
     "pages/code/ewm",
     "pages/address/address",
     "pages/address/use-addtress/use-address",
-    "pages/rituall/rituall",
     "pages/rituall/record",
     "pages/user/tuihuo",
     "pages/find/detail"

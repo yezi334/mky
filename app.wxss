@@ -246,9 +246,7 @@
 .p_ri15 {
   padding-right: 15px;
 }
-.p_5bt {
-  padding-buttom: 5px;
-}
+
 
 .p_all {
   padding: 3%;
@@ -521,10 +519,7 @@ button {
   margin-left: 70px;
 }
 
-.on {
-  color: #27aec1;
-  border-bottom: 5rpx solid #27aec1;
-}
+
 
 .inline {
   display: inline-block;
@@ -578,8 +573,11 @@ button {
   line-height: 49px;
 }
 
-/*menu list*/
-
+/*空数据*/
+.search_no{
+  margin-top:100px;
+  text-align: center;
+}
 /* pages/user/dingdan.wxss 
   
   */

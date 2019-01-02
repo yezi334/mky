@@ -74,7 +74,8 @@
 
   </view>
 
-  <view class="foot2">
+
+  <!--  <view class="foot2">
     <checkbox-group bindchange="checkbox" class="check">
       <view class='c6 font_12'>
         <checkbox value="是否匿名" />
@@ -85,6 +86,6 @@
       <text class="c3 font_12 p_le5">《细胞储存服务协议》
       </text>
     </navigator>
-  </view>
-  <button class=" button2 bg_bule" style="opacity: {{opacity}};color: white; background-color: #27aec1;width:138px;float:right" bindtap="createProductOrderByWX" data-id="{{item.id}}" disabled="{{disabled}}">立即支付</button>
+  </view>-->
+  <button class=" footfixed bg_bule" style="opacity: {{opacity}};color: white; background-color: #27aec1;width:100%;" bindtap="createProductOrderByWX" data-id="{{item.id}}" disabled="{{disabled}}">立即支付</button>
 </view>

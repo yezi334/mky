@@ -104,4 +104,6 @@ App({
   onPullDownRefresh: function() {
     wx.stopPullDownRefresh();
   },
+
+
 });

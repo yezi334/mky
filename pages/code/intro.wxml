@@ -14,7 +14,7 @@
       <view class=" w90 c3 mt10 le10 font_13"> 每成功邀请一位好友成为美科会员，即可获得相应的提成奖励。</view>
     </view>
   </view>
-  <view class="pa w90"  style='top:{{winHeight-200}}px;left:7%'>
+  <view class="pa w90"  style='top:60%;left:7%'>
     <view class="blue tc font_14">
       推荐规则
     </view>

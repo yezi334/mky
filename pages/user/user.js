@@ -285,10 +285,10 @@ Page({
       content: '你确定退出吗',
       success: function(res) {
         res.confirm &&
-         wx.removeStorageSync('weid');
+        // wx.removeStorageSync('weid');
         wx.removeStorageSync('uid');
         wx.removeStorageSync('phone');
-        //wx.removeStorageSync('weid');
+        wx.removeStorageSync('weid');
         that.setData({
           hasphone: false,
         })

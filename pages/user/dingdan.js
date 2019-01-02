@@ -264,9 +264,11 @@ Page({
       return false;
     } else {
       var current = e.target.dataset.current;
+      var offsetW = e.currentTarget.offsetLeft;
       that.setData({
         currentTab: parseInt(current),
         isStatus: e.target.dataset.otype,
+        slideOffset:offsetW
       });
 
       console.log(that.data.currentTab);

@@ -21,7 +21,6 @@
       <block wx:for="{{typeTree}}" wx:key="*this" data-id="{{item.id}}">
         <view class="ban buttom">
           <navigator url="../product/detail?productId={{item.id}}">
-
             <image src="{{item.photo_d}}" style='width:100%;height:197px;'></image>
             <view class="act-item ellipsis">
               <text class="type p_le10 weight">{{item.name}}</text>

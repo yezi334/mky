@@ -67,6 +67,10 @@
       <!-- 待付款 -->
       <swiper-item>
       <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+       <view class="search_no" wx:if="{{!orderList0.length}}">
+         
+          <text>暂无记录/(ㄒoㄒ)/~~</text>
+        </view>
         <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
 
           <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
@@ -151,8 +155,12 @@
       <!-- 待付款 -->
       <swiper-item>
         <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+        <view class="search_no" wx:if="{{!orderList0.length}}">
+         
+          <text>暂无记录/(ㄒoㄒ)/~~</text>
+        </view>
         <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
-
+ 
           <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
           <view class='w80'>
             <text wx:if="{{item.fxlevel == 1}}">
@@ -236,6 +244,10 @@
       <!-- 待收货 -->
       <swiper-item>
           <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+           <view class="search_no" wx:if="{{!orderList0.length}}">
+         
+          <text>暂无记录/(ㄒoㄒ)/~~</text>
+        </view>
         <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
 
           <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">
@@ -320,6 +332,10 @@
       <!-- 已完成-->
       <swiper-item>
           <scroll-view scroll-y style="height:{{winHeight -20}}px;">
+           <view class="search_no" wx:if="{{!orderList0.length}}">
+         
+          <text>暂无记录/(ㄒoㄒ)/~~</text>
+        </view>
         <view class="shop  " wx:for="{{orderList0}}" wx:key="*this">
 
           <view class="c3 font_14 mt8  p_le10 " wx:if="{{item.event == 1}}">

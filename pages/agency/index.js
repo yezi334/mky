@@ -34,7 +34,6 @@ Page({
     var that = this;
     var user = that.data.user;
     //console.log(user)
-    
       var level = user.level;
     if (level == 0) {
         wx.showToast({
@@ -53,7 +52,7 @@ Page({
     var that = this;
     var phone = that.data.hasphone;
     var user = that.data.user;
-    console.log(user)
+
     var level = user.level;
     wx.navigateTo({
       url: '../code/intro'
@@ -123,4 +122,10 @@ Page({
       withShareTicket: true
     })
   },
+  //返回页面固定页面
+  onUnload() {
+    wx.reLaunch({
+      url: '../user/user'
+    })
+  }
 })

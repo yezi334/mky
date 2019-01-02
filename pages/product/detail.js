@@ -185,13 +185,10 @@ Page({
     
   },
   //立刻购买
-  scroll() {
-    var that = this;
-   
-console.log('q34');
-
-
-  },
+ //scroll() {
+   // var that = this;   
+//console.log('q34');
+  //},
   addShopCart(e){ //添加到购物车
     var that = this;
     wx.request({
@@ -240,7 +237,7 @@ console.log('q34');
   },
   //整个页面滚动时候
   onPageScroll (e) {
-    console.log("124324");//{scrollTop:99}
+  //  console.log("124324");//{scrollTop:99}
   },
   bindChange: function (e) {//滑动切换tab 
     var that = this;
@@ -272,9 +269,71 @@ console.log('q34');
       })
     }
   },
-  //分享链接
-  onShareAppMessage: function (res) {
-    comm.share(res);
+
+  tapType(e) {
+    var that = this;
+    const currType = e.currentTarget.dataset.current;
+    const id =that.data.productId;
+    that.setData({
+      currType: currType
+    });
+    console.log(currType);
+    wx.request({
+      url: app.d.ceshiUrl + '/Api/Product/getcat',
+      method: 'post',
+      data: {
+        cat_id: currType,
+        id:id
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success(res) {
+        var status = res.data.status;
+        if (status == 1) {
+          var pro = res.data.pro;
+          var content = pro.content;
+          var services = pro.services;
+          //that.initProductData(data);
+          WxParse.wxParse('content', 'html', content, that, 3);
+          WxParse.wxParse('services', 'html', services, that, 3);
+          //that.setData({
+         //   typeTree: catList,
+         //   page: 2
+         /// });
+        } else {
+          wx.showToast({
+            title: "网络错误",
+            duration: 2000,
+            icon: 'none'
+          });
+        }
+      },
+      error(e) {
+        wx.showToast({
+          title: '网络异常！',
+          icon: 'none',
+          duration: 2000,
+        });
+      }
+    });
+  },
+
+  // 分享链接
+  onShareAppMessage(res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    var uid = app.d.uid;
+    return {
+      title: '美科',
+      desc: '美科健康!',
+      path: '/pages/index/index?pid=' + uid
+    }
+    wx.showShareMenu({
+      withShareTicket: true
+    })
   },
 
 

@@ -78,6 +78,11 @@ Page({
               }
             })
            
+          }else{
+            that.setData({
+              disabled: false,
+              opacity: 1
+            })
           }
         },
         fail: function() {
@@ -182,24 +187,6 @@ Page({
     this.createProductOrder();
   },
 
-  checkbox(e) {
-    var that = this;
-    if (e.detail.value == '') {
-      that.setData({
-        disabled: true,
-        opacity: 0.4
-      })
-    } else {
-      var info = that.data.info;
-      if (info) {
-        console.log('log')
-        that.setData({
-          disabled: false,
-          opacity: 1
-        })
-      }
-    }
-  },
 //提交订单
   getFormID (e) {
     var formId=e.detail.formId;
@@ -361,11 +348,11 @@ Page({
           if (res.data.status == 1) {
             
           } else {
-            wx.showToast({
-              icon: 'none',
-              title:  '发送成功',
-              duration: 2000
-            });
+           // wx.showToast({
+             // icon: 'none',
+             // title:  '发送成功',
+             // duration: 2000
+           // });
           }
         },
         fail() {

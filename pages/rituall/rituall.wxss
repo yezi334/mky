@@ -30,9 +30,17 @@ page {
 
 .on {
   color: #27aec1;
-  border-bottom: 3px solid #27aec1;
-  width: 30%;
+
   font-weight: 600;
+}
+.weui-navbar-slider {
+  position: relative;
+  width: 16%;
+  height: 8rpx;
+  background: #27aec1;
+  bottom:8rpx;
+  left:7%;
+  transition: transform 0.3s;
 }
 
 .img {

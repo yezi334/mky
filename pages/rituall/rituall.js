@@ -16,6 +16,7 @@ Page({
     orderList0: [],
     orderList1: [],
     orderList2: [],
+    slideOffset:64,
    
   },
   onLoad (options) {
@@ -87,9 +88,11 @@ Page({
       return false;
     } else {
       var current = e.target.dataset.current;
+      var offsetW = e.currentTarget.offsetLeft;
       that.setData({
         currentTab: parseInt(current),
         isStatus: e.target.dataset.otype,
+        slideOffset: offsetW
       });
 
       //没有数据就进行加载

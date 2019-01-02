@@ -102,7 +102,6 @@ white-space: nowrap;
 }
 
 
-
 .active {
   color: #fff;
   background: #27aec1;

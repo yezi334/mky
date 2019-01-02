@@ -7,6 +7,7 @@ Page({
   data: {
     money: 2980,
     level: 1,
+    slideOffset: 19,
     winWidth: 0,
     winHeight: 0,
     // tab切换  
@@ -48,7 +49,7 @@ Page({
   getpro() {
     var that = this;
     wx.request({
-      url: app.d.ceshiUrl + '/Api/Voucher/getpro',
+      url: app.d.ceshiUrl + '/Api/Voucher/prolevel',
       method: 'post',
       data: {
         uid: app.d.uid,
@@ -106,13 +107,16 @@ Page({
   },
   swichNav(e) {
     var that = this;
+ 
     if (that.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
+      var offsetW = e.currentTarget.offsetLeft;  //2种方法获取距离文档左边有多少距离
       var current = e.target.dataset.current;
       that.setData({
         currentTab: parseInt(current),
         isStatus: e.target.dataset.otype,
+        slideOffset: offsetW
       });
     };
   },

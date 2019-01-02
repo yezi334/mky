@@ -1,86 +1,51 @@
-
+//index.js
+//获取应用实例
+var app = getApp();
+var mtabW;
 Page({
   data: {
-    // text:"这是一个页面"
-    list: [],
-    dd: '',
-    hidden: false,
-    page: 1,
-    size: 20,
-    hasMore: true,
-    hasRefesh: false
+    tabs: ["综合与绘画", "艺术喷漆", "泥塑", "纸面绘画", "布面绘画", "中国油画", "水墨画"],
+    activeIndex: 0,
+    slideOffset: 0,
+    tabW: 0
   },
-  onLoad: function (options) {
+  //事件处理函数
+  onLoad: function () {
     var that = this;
-    var url = 'http://v.juhe.cn/weixin/query?key=f16af393a63364b729fd81ed9fdd4b7d&pno=1&ps=10';
-    network_util._get(url,
-      function (res) {
+    wx.getSystemInfo({
+      success: function (res) {
+        mtabW = res.windowWidth / 4;  //设置tab的宽度
         that.setData({
-          list: res.data.result.list,
-          hidden: true,
-        });
-      }, function (res) {
-        console.log(res);
-      });
-  },
-  onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
-    // 页面显示
-  },
-  onHide: function () {
-    // 页面隐藏
-  },
-  onUnload: function () {
-    // 页面关闭
-  },
-  //点击事件处理
-  bindViewTap: function (e) {
-    console.log(e.currentTarget.dataset.title);
-  },
-  //加载更多
-  loadMore: function (e) {
-    var that = this;
-    that.setData({
-      hasRefesh: true,
+          tabW: mtabW
+        })
+      }
     });
-    if (!this.data.hasMore) return
-    var url = 'http://v.juhe.cn/weixin/query?key=f16af393a63364b729fd81ed9fdd4b7d&pno=' + (++that.data.page) + '&ps=10';
-    network_util._get(url,
-      function (res) {
-        that.setData({
-          list: that.data.list.concat(res.data.result.list),
-          hidden: true,
-          hasRefesh: false,
-        });
-      }, function (res) {
-        console.log(res);
-      })
+
   },
-  //刷新处理
-  refesh: function (e) {
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
+  tabClick: function (e) {
     var that = this;
-    that.setData({
-      hasRefesh: true,
+    var idIndex = e.currentTarget.id;
+    var offsetW = e.currentTarget.offsetLeft;  //2种方法获取距离文档左边有多少距离
+    this.setData({
+      activeIndex: idIndex,
+      slideOffset: offsetW
     });
-    var url = 'http://v.juhe.cn/weixin/query?key=f16af393a63364b729fd81ed9fdd4b7d&pno=1&ps=10';
-    network_util._get(url,
-      function (res) {
-        that.setData({
-          list: res.data.result.list,
-          hidden: true,
-          page: 1,
-          hasRefesh: false,
-        });
-      }, function (res) {
-        console.log(res);
-      })
   },
+  bindChange: function (e) {
+    var current = e.detail.current;
+    if ((current + 1) % 4 == 0) {
+    }
+    var offsetW = current * mtabW;    //2种方法获取距离文档左边有多少距离
+    this.setData({
+      activeIndex: current,
+      slideOffset: offsetW
+    });
 
+  }
 
-  // 分享链接
-  onShareAppMessage: function (res) {
-    comm.share(res);
-  },
 })

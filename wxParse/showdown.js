@@ -419,7 +419,7 @@ showdown.validateExtension = function (ext) {
 
   var validateExtension = validate(ext, null);
   if (!validateExtension.valid) {
-    console.warn(validateExtension.error);
+    console.log.warn(validateExtension.error);
     return false;
   }
   return true;
@@ -681,8 +681,8 @@ showdown.helper.replaceRecursiveRegExp = function (str, replacement, left, right
 /**
  * POLYFILLS
  */
-if (showdown.helper.isUndefined(console)) {
-  console = {
+if (showdown.helper.isUndefined(console.log)) {
+  console.log = {
     warn: function (msg) {
       'use strict';
       alert(msg);
@@ -788,7 +788,7 @@ showdown.Converter = function (converterOptions) {
 
       // LEGACY_SUPPORT CODE
       if (showdown.extensions[ext]) {
-        console.warn('DEPRECATION WARNING: ' + ext + ' is an old extension that uses a deprecated loading method.' +
+        console.log.warn('DEPRECATION WARNING: ' + ext + ' is an old extension that uses a deprecated loading method.' +
           'Please inform the developer that the extension should be updated!');
         legacyExtensionLoading(showdown.extensions[ext], ext);
         return;

@@ -16,7 +16,7 @@ Page({
     jifen: [],
     jf: 0,
     list: [],
-
+    slideOffset:76,
   },
   onLoad: function(options) {
     var that = this;
@@ -82,7 +82,6 @@ Page({
     var fxlevel = e.currentTarget.dataset.fxlevel;
     var list = that.data.listt;
     var list1 = list[index];
-    console.log(list1)
     var leg = list1.length;
   },
   exchange: function(e) {
@@ -91,7 +90,6 @@ Page({
     var fxlevel = e.currentTarget.dataset.fxlevel;
     var list = that.data.listt;
     var list1 = list[index];
-    console.log(list1)
     var leg = list1.length;
     if (leg == 3) {
       wx.showModal({
@@ -179,7 +177,6 @@ Page({
   swichNav2: function(e) {
     var that = this;
     var fxlevel = e.target.dataset.fxlevel;
-
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -198,8 +195,12 @@ Page({
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
+      var offsetW = e.currentTarget.offsetLeft;
+
       that.setData({
-        currentTab: e.target.dataset.current
+        currentTab: e.target.dataset.current,
+        slideOffset: offsetW
+
       })
     }
   },
@@ -265,10 +266,6 @@ Page({
     })
   },
   //返回页面固定页面
-  onUnload() {
-    wx.reLaunch({
-      url: '../user/user'
-    })
-  }
+
 
 })

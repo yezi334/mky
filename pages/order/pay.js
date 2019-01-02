@@ -11,6 +11,7 @@ Page({
     productData: [],
     total: 0,
     vid: 0,
+    isopen:0,
     openid: wx.getStorageSync('openid'),
   },
   //获取input输入框的值  
@@ -113,6 +114,11 @@ Page({
             }
           })
        
+        }else{
+          that.setData({
+            disabled: false,
+            opacity: 1
+          })
         }
 
 
@@ -184,14 +190,14 @@ Page({
       });
     }
   },
+  //勾选协议
   switch2Change: function(e) {
     var that = this;
-
-    if (e.detail.value) {
-      that.setData({
-        isopen: 1,
+  if (e.detail.value) {
+        that.setData({
+          isopen: 1,
       });
-    }
+      }
   },
   toadd: function(e) {
     var that = this;
@@ -219,27 +225,26 @@ Page({
     this.createProductOrder();
   },
 
+//勾选协议
+ // checkbox: function(e) {
+   // var that = this;
+   // if (e.detail.value == '') {
+    //  that.setData({
+      //  disabled: true,
+    //    opacity: 0.4
+    //  })
+   // } else {
 
-  checkbox: function(e) {
-    var that = this;
+     // var store = that.data.store
+    //  if (store) {
+      //  that.setData({
+       //   disabled: false,
+      //    opacity: 1
+     //   })
+     // }
 
-    if (e.detail.value == '') {
-      that.setData({
-        disabled: true,
-        opacity: 0.4
-      })
-    } else {
-
-      var store = that.data.store
-      if (store) {
-        that.setData({
-          disabled: false,
-          opacity: 1
-        })
-      }
-
-    }
-  },
+    //}
+  //},
   //确认订单
   createProductOrder: function() {
     //创建订单

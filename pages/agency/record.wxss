@@ -16,9 +16,6 @@
   position: relative;
   width: 750rpx;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 210px;
 }
 
@@ -43,19 +40,19 @@
   width: 100%;
   text-align: center;
   line-height: 80rpx;
-  background-color: Rgba(39, 174, 193, 0.3);
+  background-color:#FFF;
+   border:1rpx solid #eee;
 }
 
 .swiper-tab-list {
   font-size: 17px;
   display: inline-block;
   width: 30%;
-  color: #fff;
+  color: #606060;
 }
 
 .on {
   color: #27aec1;
-  border-bottom: 5rpx solid #27aec1;
   width: 30%;
   font-weight: 600;
 }
@@ -65,6 +62,15 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+.weui-navbar-slider {
+  position: relative;
+  width: 20%;
+  height: 8rpx;
+  background: #27aec1;
+  bottom:8rpx;
+  left:4%;
+  transition: transform 0.3s;
 }
 
 .detail {
@@ -127,7 +133,7 @@
   height: 105px;
   width: 105px;
   border-radius: 50%;
-  text-align: center;
+  margin-left: 33%;
   border: 10px solid Rgba(39, 174, 193, 0.6);
 }
 

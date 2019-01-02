@@ -16,11 +16,8 @@ page{
 }
 .userinfo {
   position: relative;
-  width: 750rpx;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 /* 会员 */
 .hy {
@@ -37,6 +34,7 @@ page{
 }
 .tp3 {
   top: 145px;
+  left:40%
 }
 .userinfo-avatar {
   display: block;

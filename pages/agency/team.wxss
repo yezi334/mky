@@ -20,13 +20,19 @@ page{
   width: 25%;
   color: #606060;
 }
-
+.weui-navbar-slider {
+  position: relative;
+  width: 13%;
+  height: 8rpx;
+  background: #27aec1;
+  bottom:8rpx;
+  left:6%;
+  transition: transform 0.3s;
+}
 .on {
   color: #27aec1;
-  border-bottom:3px solid #27aec1;
   width:25%;
    font-weight: 600;
-
 }
 
 .swiper-box {

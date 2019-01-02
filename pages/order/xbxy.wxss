@@ -1,4 +1,4 @@
 /* pages/order/xbxy.wxss */
 .wxParse{
-  margin:10px;
+  margin:5px;
 }

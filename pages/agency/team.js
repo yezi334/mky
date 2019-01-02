@@ -11,25 +11,59 @@
      refundpage: 0,
      orderList0: [],
      orderList1: [],
+     slideOffset: 80,
    },
-   onLoad: function(options) {
+   onLoad(options) {
      this.initSystemInfo();
      if (this.data.currentTab == 4) {
        this.loadReturnOrderList();
      } else {
        this.loadOrderList();
      }
+     this.getuser();
    },
-   getOrderStatus: function() {
+   getuser() {
+     var that = this;
+     // console.log("yy");
+     var uid = app.d.uid;
+     if (uid) {
+       wx.request({
+         url: app.d.ceshiUrl + '/Api/User/getuser',
+         method: 'post',
+         data: {
+           uid: app.d.uid,
+         },
+         header: {
+           'Content-Type': 'application/x-www-form-urlencoded'
+         },
+         success(res) {
+           //--init data        
+           var status = res.data.status;
+           var user = res.data.user;
+           that.setData({
+             user: user,
+           });
+         },
+         fail() {
+           // fail
+           wx.showToast({
+             title: '网络异常！',
+             duration: 2000
+           });
+         }
+       });
+     }
+   },
+   getOrderStatus() {
      return this.data.currentTab == 0 ? 1 : this.data.currentTab == 2 ? 2 : this.data.currentTab == 3 ? 3 : 0;
    },
-   loadOrderList: function() {
+   loadOrderList() {
      var that = this;
      wx.request({
        url: app.d.ceshiUrl + '/Api/Agency/getteam',
        method: 'post',
        data: {
-         uid: wx.getStorageSync('uid'),
+         uid: app.d.uid,
          phone: app.d.phone,
          type: that.data.isStatus,
          page: that.data.page,
@@ -37,7 +71,7 @@
        header: {
          'Content-Type': 'application/x-www-form-urlencoded'
        },
-       success: function(res) {
+       success(res) {
          //--init data        
          var status = res.data.status;
          var list = res.data.ord;
@@ -63,7 +97,7 @@
              break;
          }
        },
-       fail: function() {
+       fail() {
          // fail
          wx.showToast({
            title: '网络异常！',
@@ -72,17 +106,30 @@
        }
      });
    },
-   tohy: function(e) {
+   tohy(e) {
+     var that=this;
+     var user=that.data.user;
      var uid = e.currentTarget.dataset.uid;
      var fxlevel = e.currentTarget.dataset.fxlevel;
-     wx.navigateTo({
-       url: '../agency/hydd?uid=' + uid + '&fxlevel=' + fxlevel,
-     })
+     var level = user.level;
+       if (level == 0) {
+       wx.showToast({
+        title: "您还不是会员!",
+        duration: 3000,
+        icon:'none'
+       });
+       }else{
+         wx.navigateTo({
+           url: '../agency/hydd?uid=' + uid + '&fxlevel=' + fxlevel,
+         })
+       }
+ 
+
    },
-   initSystemInfo: function() {
+   initSystemInfo() {
      var that = this;
      wx.getSystemInfo({
-       success: function(res) {
+       success(res) {
          that.setData({
            winWidth: res.windowWidth,
            winHeight: res.windowHeight
@@ -90,15 +137,17 @@
        }
      });
    },
-   swichNav: function(e) {
+   swichNav(e) {
      var that = this;
      if (that.data.currentTab === e.target.dataset.current) {
        return false;
      } else {
        var current = e.target.dataset.current;
+       var offsetW = e.currentTarget.offsetLeft;
        that.setData({
          currentTab: parseInt(current),
          isStatus: e.target.dataset.otype,
+         slideOffset: offsetW
        });
        //没有数据就进行加载
        switch (that.data.currentTab) {
@@ -114,7 +163,7 @@
        }
      };
    },
-   onShareAppMessage: function (res) {
+   onShareAppMessage(res) {
      if (res.from === 'button') {
        // 来自页面内转发按钮
        console.log(res.target)
