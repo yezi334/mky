@@ -20,7 +20,7 @@
             <image class='png' src="/images/my/vip.png" />
             <text style="margin-left:5px;font-size:17px;color:#303030">VIP会员尊享权益；</text>
           </view>
-          <view class="sp_text" style='margin-top:10px'>
+          <view class="sp_text" style='margin-top:20px'>
             <view class="sp_tit ovh1">
               <view class="circle"></view>
               <text class="tx1"> 送价值<text class="font_14" style="color:#27aec1">2980元</text>面部细胞护理1次；</text>

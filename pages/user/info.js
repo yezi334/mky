@@ -11,6 +11,7 @@ Page({
     province:'',
     city:'',
     county:'',
+    type:'',
     able: false,
     productId:'',
     id:'',
@@ -38,12 +39,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad(options) {
     var that = this;
     var type = options.type;
     var id = options.id;
     that.setData({
-      type: options.type,
+      type: type,
       id: options.id,
       productId: options.productId,
     });
@@ -60,7 +61,7 @@ Page({
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        success: function(res) {
+        success(res) {
           if (res.data.status == 1) {
             var user = res.data.user;
             // var sex = user.sex;
@@ -76,7 +77,7 @@ Page({
             }
           }
         },
-        error: function(e) {
+        error(e) {
           wx.showToast({
             title: '网络异常！',
             icon: 'none',
@@ -97,7 +98,7 @@ Page({
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        success: function(res) {
+        success(res) {
           if (res.data.status == 1) {
             var user = res.data.user;
             // var sex = user.sex;
@@ -114,7 +115,7 @@ Page({
 
           }
         },
-        error: function(e) {
+        error(e) {
           wx.showToast({
             title: '网络异常！',
             icon: 'none',
@@ -130,7 +131,7 @@ Page({
 
   },
 
-  open: function() {
+  open() {
     var that = this;
     //console.log(222);
     //console.log(that.data.condition);
@@ -142,7 +143,7 @@ Page({
         opacity: 1
       })
     } else {
-      console.log(2334);
+     // console.log(2334);
       that.setData({
         able: true,
         disabled: true,
@@ -157,13 +158,13 @@ Page({
   },
 
 
-  reg: function(e) {
+  reg(e) {
     var that = this;
     var fdata = e.detail.value;
     that.check(fdata);
 
   },
-  check: function(e) {
+  check(e) {
     //console.log(e);
     var warn = "";
     var that = this;
@@ -223,7 +224,7 @@ Page({
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        success: function(res) {
+        success(res) {
           var infoid = res.data.id
           wx.showToast({
             title: res.data.err,
@@ -249,7 +250,7 @@ Page({
           }
 
         },
-        error: function(e) {
+        error(e) {
           wx.showToast({
             title: '网络异常！',
             icon: 'none',
@@ -266,7 +267,7 @@ Page({
     }
 
   },
-  sub: function(e) {
+  sub(e) {
     var that = this;
 
     wx.request({
@@ -290,7 +291,7 @@ Page({
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      success: function(res) {
+      success(res) {
         wx.showToast({
           title: res.data.err,
         })
@@ -303,7 +304,7 @@ Page({
 
 
       },
-      error: function(e) {
+      error(e) {
         wx.showToast({
           title: '网络异常！',
           icon: 'none',
@@ -312,23 +313,23 @@ Page({
       },
     })
   },
-  actionSheetTap: function() {
+  actionSheetTap() {
     var that = this;
-    console.log('223322');
+  //  console.log('223322');
     that.setData({
       actionSheetHidden: !that.data.actionSheetHidden
     })
   },
-  actionSheetbindchange: function() {
+  actionSheetbindchange() {
     var that = this;
-    console.log('2222');
+    //console.log('2222');
     console.log(that.data.actionSheetHidden);
     that.setData({
       actionSheetHidden: that.data.actionSheetHidden
     })
   },
   //升级钻石 会员
-  bindsex: function(e) {
+  bindsex(e) {
     var that = this;
     var sex = e.currentTarget.dataset.sex;
     //console.log(that.data.actionSheetHidden);
@@ -339,7 +340,7 @@ Page({
 
   },
 
-  bindRegionChange: function (e) {
+  bindRegionChange (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     var region = e.detail.value;
     this.setData({

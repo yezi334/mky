@@ -1,7 +1,7 @@
 <!--pay.wxml-->
 <view class="huise">
   <form name='pushMsgFm' report-submit='true' bindsubmit='getFormID'>
-    <view class="w100 buttom">
+    <view class="w100">
       <view class="df item">
         <view class="cp_photo">
           <image src="{{item.svpic}}" class="le10"></image>

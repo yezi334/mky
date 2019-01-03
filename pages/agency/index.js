@@ -61,7 +61,7 @@ Page({
   },
   //判断是否登录
   // 加载
-  onLoad: function() {
+  onLoad: function (options) {
     var that = this;
   
     //更新数据

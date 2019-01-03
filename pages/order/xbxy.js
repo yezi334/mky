@@ -17,7 +17,7 @@ Page({
     var xy = options.xy;
     if (options.xy == 4) {
       wx.setNavigationBarTitle({
-        title: '满三返佣'
+        title: '满三提积'
       })
     } else if(options.xy == 3){
       wx.setNavigationBarTitle({

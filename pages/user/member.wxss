@@ -112,6 +112,8 @@
 
 .sp_tit {
   margin-left: 15px;
+  margin-top:5px;
+
 }
 
 .tx1 {

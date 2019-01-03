@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 20,
+			"current": 22,
 			"list": [
 				{
 					"id": 0,
@@ -168,7 +168,20 @@
 				{
 					"id": -1,
 					"name": "我的卡券",
-					"pathName": "pages/rituall/rituall"
+					"pathName": "pages/rituall/rituall",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的会员",
+					"pathName": "pages/user/member",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "会员充值",
+					"pathName": "pages/user/pay",
+					"query": "level=3"
 				}
 			]
 		}
