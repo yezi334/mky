@@ -8,6 +8,9 @@ Page({
    */
   data: {
     region: ['广东省', '', ''],
+    province:'',
+    city:'',
+    county:'',
     able: false,
     productId:'',
     id:'',

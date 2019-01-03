@@ -14,16 +14,12 @@ Page({
     openid: wx.getStorageSync('openid'),
   },
   //获取input输入框的值  
-  getremarkValue: function(e) {
+  getremarkValue(e) {
     this.setData({
       remark: e.detail.value
     })
   },
-
-
-
-
-  onLoad: function(options) {
+  onLoad(options) {
     var that = this;
     //判断用户是否绑定个人信息
     //that.getuser();
@@ -32,7 +28,7 @@ Page({
     });
     that.getpro();
   },
-  getuser: function() {
+  getuser() {
     var that = this;
     var uid = app.d.uid;
     if (uid) {
@@ -45,7 +41,7 @@ Page({
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        success: function(res) {
+        success(res) {
           //--init data        
           var status = res.data.status;
           var info = res.data.user.info;
@@ -85,7 +81,7 @@ Page({
             })
           }
         },
-        fail: function() {
+        fail() {
           // fail
           wx.showToast({
             title: '网络异常！',
@@ -96,12 +92,12 @@ Page({
       });
     }
   },
-  onShow: function() {
+  onShow() {
     var that = this;
     that.getuser();
   },
   //获取产品信息 
-  getpro: function() {
+  getpro() {
     var that = this;
     wx.request({
       url: app.d.ceshiUrl + '/Api/Payment/buy_level',
@@ -113,7 +109,7 @@ Page({
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      success: function(res) {
+      success(res) {
         //that.initProductData(res.data);
         var pro = res.data.pro;
         var user = res.data.user;
@@ -130,7 +126,7 @@ Page({
     });
   },
   //积分抵扣 电子发票
-  switch1Change: function (e) {
+  switch1Change (e) {
     var that=this;
     var on = e.detail.value;
     // console.log('switch2 发生 change 事件，携带值为', e.detail.value);
@@ -165,7 +161,7 @@ Page({
       });
     }
   },
-  switch2Change: function(e) {
+  switch2Change(e) {
     var that = this;
     console.log('switch2 发生 change 事件，携带值为', e.detail.value)
     if (e.detail.value) {
@@ -175,7 +171,7 @@ Page({
     }
   },
   //微信支付
-  createProductOrderByWX: function(e) {
+  createProductOrderByWX(e) {
     var formId=e.detail.formId;
     this.setData({
       paytype: 'weixin',
@@ -242,7 +238,7 @@ Page({
         }
         
       },
-      fail: function(e) {
+      fail(e) {
         wx.showToast({
           btnDisabled: false,
           icon: 'none',
@@ -289,7 +285,7 @@ Page({
               var level = that.data.level;
               setTimeout(function() {
                 wx.switchTab({
-                  url: '../user/user',
+                  url: '../user/member?ispay=1',
 
                 })
               }, 2500);
@@ -302,7 +298,7 @@ Page({
               });
               setTimeout(function() {
                 wx.redirectTo({
-                  url: '../user/member',
+                  url: '../user/member?ispay=1',
                 });
               }, 2500);
             }

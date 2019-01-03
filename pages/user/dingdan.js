@@ -5,6 +5,7 @@ var app = getApp();
 
 Page({
   data: {
+    ispay:'',
     winWidth: 0,
     winHeight: 0,
     // tab切换  
@@ -27,6 +28,11 @@ Page({
       this.setData({
         currentTab: parseInt(options.currentTab),
         isStatus: options.otype
+      });
+    }
+    if (options.ispay) {
+      this.setData({
+        ispay: options.ispay
       });
     }
     this.loadOrderList();
@@ -439,8 +445,13 @@ Page({
   },
   //返回页面固定页面
   onUnload () {
-    wx.reLaunch({
-      url: '../user/user'
-    })
+    var that = this;
+    var ispay = that.data.ispay;
+    if (ispay == 1) {
+      wx.reLaunch({
+        url: '../user/user'
+      })
+    }
+
   }
 })

@@ -20,7 +20,7 @@
 }
 
 .in {
-  color: #c1c1c1;
+  color: #606060;
   float: right;
   width: 77%;
   padding-top: 0rpx;

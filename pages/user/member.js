@@ -6,6 +6,7 @@ var app = getApp();
 Page({
   data: {
     money: 2980,
+    ispay:'',
     level: 1,
     slideOffset: 19,
     winWidth: 0,
@@ -30,15 +31,19 @@ Page({
     menu: ''
   },
   onLoad(options) {
-
     this.initSystemInfo();
     if (options.otype) {
       this.setData({
         currentTab: parseInt(options.currentTab),
         isStatus: options.otype
       });
-
     }
+    if(options.ispay){
+      this.setData({
+        ispay: options.ispay
+      });
+    }
+      
     this.loadOrderList();
     this.getpro();
   },
@@ -301,8 +306,14 @@ Page({
   },
   //返回页面固定页面
   onUnload() {
-    wx.reLaunch({
-      url: '../user/user'
-    })
+    //是否是支付完成后的跳转
+    var that=this;
+    var ispay=that.data.ispay;
+   if(ispay==1){
+     wx.reLaunch({
+       url: '../user/user'
+     })
+   }
+    
   }
 })

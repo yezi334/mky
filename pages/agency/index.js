@@ -3,6 +3,7 @@ var tcity = require("../../utils/comm.js");
 var app = getApp()
 Page({
   data: {
+    ispay:'',
     user:[],
     comm: [{
       not: 0,
@@ -61,7 +62,8 @@ Page({
   //判断是否登录
   // 加载
   onLoad: function() {
-    var that = this
+    var that = this;
+  
     //更新数据
     wx.request({
       url: app.d.ceshiUrl + '/Api/Agency/getagency',
@@ -92,6 +94,11 @@ Page({
         });
       },
     })
+    if (options.ispay) {
+      this.setData({
+        ispay: options.ispay
+      });
+    }
     that.setData({
       hasphone: false,
       hasdist: false
@@ -124,8 +131,12 @@ Page({
   },
   //返回页面固定页面
   onUnload() {
-    wx.reLaunch({
-      url: '../user/user'
-    })
+    var that = this;
+    var ispay = that.data.ispay;
+    if (ispay == 1) {
+      wx.reLaunch({
+        url: '../user/user'
+      })
+    }
   }
 })

@@ -64,13 +64,12 @@ Page({
             pagae: 1
           });
         }
-
         //if(leg==3){
         ///  that.setData({
         ///
         //   disabled: false,
         //   opacity: 1
-        / /
+     
         // })
         // }
         //console.log(leg);
@@ -81,14 +80,7 @@ Page({
       },
     })
   },
-  exchange2: function(e) {
-    var that = this;
-    var index = e.currentTarget.dataset.index;
-    var fxlevel = e.currentTarget.dataset.fxlevel;
-    var list = that.data.listt;
-    var list1 = list[index];
-    var leg = list1.length;
-  },
+ 
   exchange: function(e) {
     var that = this;
     var index = e.currentTarget.dataset.index;
@@ -117,7 +109,7 @@ Page({
                 if (status == 1) {
                   comm.toastSuccess('兑换成功');
                   wx.redirectTo({
-                    url: '../agency/index?fxlevel=3',
+                    url: '../agency/index?fxlevel=3?ispay=1',
                   });
                 } else {
                   comm.toastSuccess('网络异常！');
@@ -194,35 +186,29 @@ Page({
 
   },
   // 点击tab切换 
-  swichNav: function(e) {
+  swichNav(e) {
     var that = this;
     // console.log(e.target.dataset.current);
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
       var offsetW = e.currentTarget.offsetLeft;
-
       that.setData({
         currentTab: e.target.dataset.current,
         slideOffset: offsetW
-
       })
     }
   },
-  toxy: function() {
+  toxy() {
     var that = this;
     wx.navigateTo({
       url: '../order/xbxy?xy=4',
     });
-
-
   },
-
   onReachBottom() {
     var that = this;
     var page = that.data.page;
     var currentTab = that.data.currentTab;
-
     wx.showNavigationBarLoading() //在标题栏中显示加载
     wx.request({
       url: app.d.ceshiUrl + '/Api/Vipjf/get_more',
@@ -237,7 +223,7 @@ Page({
       method: 'post',
       // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
-      success: function(res) {
+      success(res) {
         var more = res.data.morelist;
         //that.initProductData(data);
         //   that.setData({
@@ -245,17 +231,17 @@ Page({
         // listt: that.data.listt.concat(more)
         //});
       },
-      fail: function() {
+      fail() {
         // fail
       },
-      complete: function() {
+      complete() {
         // complete
         wx.hideNavigationBarLoading() //完成停止加载
         wx.stopPullDownRefresh() //停止下拉刷新
       }
     })
   },
-  onShareAppMessage: function(res) {
+  onShareAppMessage(res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)

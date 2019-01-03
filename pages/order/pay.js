@@ -322,7 +322,7 @@ Page({
               });
               setTimeout(function() {
                 wx.redirectTo({
-                  url: '../user/dingdan?currentTab=1&otype=20',
+                  url: '../user/dingdan?currentTab=1&otype=20&ispay=1',
               
                 });
               }, 2500);
@@ -335,7 +335,7 @@ Page({
               });
               setTimeout(function() {
                 wx.redirectTo({
-                  url: '../user/dingdan?currentTab=0&otype=10',
+                  url: '../user/dingdan?currentTab=0&otype=10&ispay=1',
                 
                 });
               }, 2500);
