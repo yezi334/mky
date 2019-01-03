@@ -2,13 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    
     "pages/agency/team",
     "pages/user/member",
     "pages/user/index",
     "pages/agency/record",
     "pages/rituall/rituall",
-    
     "pages/agency/index",
     "pages/code/index",
     "pages/cash/record",

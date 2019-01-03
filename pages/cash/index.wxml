@@ -34,8 +34,12 @@
       <text class='green'>{{allmoney}}元</text>
       <text class='p_le10 blue' bindtap='allmoney'>全部提现</text>
     </view>
-    <view style="display:hidden" class="mt50">
+    
+    <view  class="mt50">
       <button type="" bindtap='save' hover-class='button-hover ' class='changeBtn w100' style="opacity: {{opacity}};" disabled="{{disabled}}" >提现</button>
+    </view>
+     <view class='p_le10 font_12 tc text'>
+      <text class="c3">提现到账时间1~7个工作日！</text>
     </view>
   </form>
 </view>

@@ -16,7 +16,7 @@ Page({
     orderList0: [],
     orderList1: [],
     orderList2: [],
-    slideOffset:64,
+    slideOffset:'',
    
   },
   onLoad (options) {
@@ -163,9 +163,13 @@ Page({
     var that = this;
     wx.getSystemInfo({
       success (res) {
+        var winWidth = res.windowWidth;
+        var slideOffset = winWidth*0.2;
         that.setData({
           winWidth: res.windowWidth,
-          winHeight: res.windowHeight
+          winHeight: res.windowHeight,
+          slideOffset: slideOffset
+
         });
       }
     });

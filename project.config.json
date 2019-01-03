@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 20,
 			"list": [
 				{
 					"id": 0,
@@ -158,6 +158,17 @@
 					"name": "推荐码",
 					"pathName": "pages/code/intro",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现页面",
+					"pathName": "pages/cash/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的卡券",
+					"pathName": "pages/rituall/rituall"
 				}
 			]
 		}

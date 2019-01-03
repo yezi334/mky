@@ -23,10 +23,11 @@
         <view class="font_17 c3 p_le10">
           <text>积分明细</text>
         </view>
-        <scroll-view style="height:{{winHeight - 268}}px" scroll-y>
-        <view class="search_no" wx:if="{{!list.length}}">
+          <view class="search_no" wx:if="{{!list.length}}">
           <text>暂时没有积分/(ㄒoㄒ)/~~！</text>
         </view>
+        <scroll-view style="height:{{winHeight - 28}}px;background:#eee;" scroll-y>
+      
           <view class="bg hr list  font_14" wx:for="{{list}}">
             <text class="p_le10 c3">{{item.addtime}}</text>
             <view class="inline fl_r">

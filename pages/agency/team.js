@@ -11,7 +11,7 @@
      refundpage: 0,
      orderList0: [],
      orderList1: [],
-     slideOffset: 80,
+     slideOffset:'',
    },
    onLoad(options) {
      this.initSystemInfo();
@@ -130,9 +130,12 @@
      var that = this;
      wx.getSystemInfo({
        success(res) {
+         var winWidth = res.windowWidth;
+         var slideOffset = winWidth * 0.2;
          that.setData({
            winWidth: res.windowWidth,
-           winHeight: res.windowHeight
+           winHeight: res.windowHeight,
+           slideOffset: slideOffset
          });
        }
      });

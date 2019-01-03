@@ -1,5 +1,7 @@
 /**index.wxss**/
-
+page {
+  background: #eee;
+}
 .swiper_container {
   height: 50rpx;
 }

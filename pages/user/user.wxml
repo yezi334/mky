@@ -59,10 +59,10 @@
     </view>
   </navigator>      <view class="footfixed tc"> 
     <button class="wx_pay_submit" bindtap="remove" wx:if="{{hasphone==true}}">退出登录</button> 
-  </view> -->
-   <view class="footfixed tc"> 
+  </view>  <view class="footfixed tc"> 
     <button class="wx_pay_submit" bindtap="remove" wx:if="{{hasphone==true}}">退出登录</button> 
-  </view>
+  </view>-->
+  
     <navigator url="../rituall/rituall">
       <view class="tableviewcell">
         <image src="/images/my/kb.png" />

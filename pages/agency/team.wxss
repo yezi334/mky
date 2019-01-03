@@ -1,11 +1,12 @@
 /* pages/user/dingdan.wxss */
-page{
-  background:#eee;
 
+page {
+  background: #eee;
 }
+
 .swiper-tab {
   width: 100%;
- border:1rpx solid #eee;
+  border: 1rpx solid #eee;
   text-align: center;
   line-height: 80rpx;
   background: #fff;
@@ -17,22 +18,23 @@ page{
 .swiper-tab-list {
   font-size: 16px;
   display: inline-block;
-  width: 25%;
+  width: 30%;
   color: #606060;
 }
+
 .weui-navbar-slider {
   position: relative;
-  width: 13%;
+  width: 50px;
   height: 8rpx;
   background: #27aec1;
-  bottom:8rpx;
-  left:6%;
+  bottom: 8rpx;
+  left: 8%;
   transition: transform 0.3s;
 }
+
 .on {
   color: #27aec1;
-  width:25%;
-   font-weight: 600;
+  font-weight: 600;
 }
 
 .swiper-box {
@@ -101,13 +103,11 @@ page{
   vertical-align: sub;
 }
 
-
-
 .c_t60 {
   clear: both;
   height: 1px;
   padding-top: 48px;
-  background:#FFF;
+  background: #fff;
 }
 
 .blue {

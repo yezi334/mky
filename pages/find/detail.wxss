@@ -1,6 +1,7 @@
-.cont{
+.page{
   margin:0;
   height:100%;
   width:95%;
-  margin-left:3%
+  margin-left:3%;
+  background: #FFF
 }

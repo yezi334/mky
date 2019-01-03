@@ -16,19 +16,24 @@ Page({
     jifen: [],
     jf: 0,
     list: [],
-    slideOffset:76,
+    slideOffset: '',
   },
   onLoad: function(options) {
     var that = this;
     that.getjf();
     that.gethyjf();
-
-    // 获取系统信息 
+    that.initSystemInfo();
+  },
+  initSystemInfo() {
+    var that = this;
     wx.getSystemInfo({
-      success: function(res) {
+      success(res) {
+        var winWidth = res.windowWidth;
+        var slideOffset = winWidth * 0.2;
         that.setData({
           winWidth: res.windowWidth,
-          winHeight: res.windowHeight
+          winHeight: res.windowHeight,
+          slideOffset: slideOffset
         });
       }
     });
