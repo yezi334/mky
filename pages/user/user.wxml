@@ -66,7 +66,7 @@
     <navigator url="../rituall/rituall">
       <view class="tableviewcell">
         <image src="/images/my/kb.png" />
-        <text>会员卡包</text>
+        <text>我的卡券</text>
       </view>
     </navigator>
 

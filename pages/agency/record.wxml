@@ -118,7 +118,6 @@
             <text wx:else>0</text>
           </view>
         </view>
-
       </view>
       <view class='detail pa'>
         <view class="swipertb">
@@ -126,7 +125,7 @@
           <view class="swiper-tab-list2 {{currentTab==2 ? 'on2' : 'white'}}" data-current="2" data-fxlevel="1" bindtap="swichNav2">隶属</view>
         </view>
         <view class="bg" style="height:10px;"></view>
-          <view class="search_no" wx:if="{{!listt.length}}">
+          <view class="search_no" wx:if="{{listt==''}}">
           <text>暂时没有积分/(ㄒoㄒ)/~~！</text>
         </view>
         <scroll-view style="height:{{winHeight - 291}}px" scroll-y>

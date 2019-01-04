@@ -49,12 +49,12 @@ Page({
             info: info,
           });
           if (!info) {
-        //    console.log("333");
+            //    console.log("333");
             wx.showModal({
               content: '你还没补充个人资料请先补充个人资料',
               success(res) {
                 if (res.confirm) {
-                  setTimeout(function () {
+                  setTimeout(function() {
                     wx.navigateTo({
                       url: '../user/info',
                     });
@@ -65,7 +65,7 @@ Page({
                     duration: 3000,
                     icon: 'none',
                   });
-                  setTimeout(function () {
+                  setTimeout(function() {
                     wx.navigateTo({
                       url: '../user/info',
                     });
@@ -73,8 +73,8 @@ Page({
                 }
               }
             })
-           
-          }else{
+
+          } else {
             that.setData({
               disabled: false,
               opacity: 1
@@ -85,7 +85,7 @@ Page({
           // fail
           wx.showToast({
             title: '网络异常！',
-            icon:'none',
+            icon: 'none',
             duration: 2000
           });
         }
@@ -126,8 +126,8 @@ Page({
     });
   },
   //积分抵扣 电子发票
-  switch1Change (e) {
-    var that=this;
+  switch1Change(e) {
+    var that = this;
     var on = e.detail.value;
     // console.log('switch2 发生 change 事件，携带值为', e.detail.value);
     // 
@@ -138,7 +138,7 @@ Page({
       if (on) {
         var usejf = Math.floor(jifen / 1000);
         var needpay = money - usejf;
-      
+
         var needpay = Math.floor(needpay * 100) / 100;
         console.log(needpay);
         that.setData({
@@ -172,7 +172,7 @@ Page({
   },
   //微信支付
   createProductOrderByWX(e) {
-    var formId=e.detail.formId;
+    var formId = e.detail.formId;
     this.setData({
       paytype: 'weixin',
       remark: this.data.remark,
@@ -183,20 +183,21 @@ Page({
     this.createProductOrder();
   },
 
-//提交订单
-  getFormID (e) {
-    var formId=e.detail.formId;
+  //提交订单
+  getFormID(e) {
+  //  e.preventDefault();
+    var formId = e.detail.formId;
     this.setData({
       formId: e.detail.formId,
       paytype: 'weixin',
       remark: this.data.remark,
       formId: formId
     })
- this.createProductOrder();
-    },
+    this.createProductOrder();
+  },
   //确认订单
   createProductOrder() {
-   
+
     //创建订单
     var that = this;
     that.setData({
@@ -217,7 +218,7 @@ Page({
         vid: that.data.vid, //优惠券ID
         isopen: that.data.isopen,
         jifen: that.data.jifen,
-       
+
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -226,9 +227,9 @@ Page({
         //--init data        
         var order = res.data.order_sn;
         var status = res.data.status;
-        if(status==1){
+        if (status == 1) {
           that.wxpay(order);
-        }else{
+        } else {
           var msg = res.data.msg;
           wx.showToast({
             icon: 'none',
@@ -236,7 +237,7 @@ Page({
             duration: 2000
           });
         }
-        
+
       },
       fail(e) {
         wx.showToast({
@@ -323,43 +324,43 @@ Page({
   },
 
 
-  sendTemplatePaySuccess(order_sn){
+  sendTemplatePaySuccess(order_sn) {
     var that = this;
-    var formId=that.data.formId;
+    var formId = that.data.formId;
 
-      var that = this;
-      wx.request({
-        url: app.d.ceshiUrl + '/Api/Wxpay/send',
-        data: {
-          openid: wx.getStorageSync('openid'),
-          formId: formId,
-          order_sn:order_sn
-         
-        },
-        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }, // 设置请求的 header
-        success(res) {
-          if (res.data.status == 1) {
-            
-          } else {
-           // wx.showToast({
-             // icon: 'none',
-             // title:  '发送成功',
-             // duration: 2000
-           // });
-          }
-        },
-        fail() {
-          // fail
-          wx.showToast({
-            icon: 'none',
-            title: '网络异常！',
-            duration: 2000
-          });
+    var that = this;
+    wx.request({
+      url: app.d.ceshiUrl + '/Api/Wxpay/send',
+      data: {
+        openid: wx.getStorageSync('openid'),
+        formId: formId,
+        order_sn: order_sn
+
+      },
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }, // 设置请求的 header
+      success(res) {
+        if (res.data.status == 1) {
+
+        } else {
+          // wx.showToast({
+          // icon: 'none',
+          // title:  '发送成功',
+          // duration: 2000
+          // });
         }
-      })
-    
+      },
+      fail() {
+        // fail
+        wx.showToast({
+          icon: 'none',
+          title: '网络异常！',
+          duration: 2000
+        });
+      }
+    })
+
   }
 });

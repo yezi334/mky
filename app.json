@@ -1,13 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/agency/record",
     "pages/order/xbxy",
-    "pages/index/index",
     "pages/user/user",
     "pages/agency/team",
     "pages/user/member",
     "pages/user/index",
-   
     "pages/rituall/rituall",
     "pages/agency/index",
     "pages/code/index",
@@ -25,7 +24,6 @@
     "pages/info/index",
     "pages/info/info",
     "pages/user/success",
-   
     "pages/order/detail",
     "pages/user/myxb",
     "pages/code/ewm",

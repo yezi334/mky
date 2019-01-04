@@ -5,13 +5,13 @@
   <view class="white font_15 tc">因为有爱，不敢老去！</view>
   <view class='detail mt17'>
     <image src="/images/my/tjmbg.png" class="bg" style='height:{{winHeight-180}}px'></image>
-    <view class='pa' style='top:130px'>
+    <view class='pa' style='top:25%'>
       <view class="c3 tc font_15">您的推荐码</view>
       <view class="blue tc font mt10">{{recomm}}</view>
       <view class="white tc mt10">
         <text class="bt font_17" bindtap='copy'> 复制</text>
       </view>
-      <view class=" w90 c3 mt10 le10 font_13"> 每成功邀请一位好友成为美科会员，即可获得相应的提成奖励。</view>
+      <view class=" w90 c3 mt40 le10 font_13"> 每成功邀请一位好友成为美科会员，即可获得相应的提成奖励。</view>
     </view>
   </view>
   <view class="pa w90"  style='top:60%;left:7%'>

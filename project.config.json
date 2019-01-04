@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 23,
 			"list": [
 				{
 					"id": 0,
@@ -182,6 +182,11 @@
 					"name": "会员充值",
 					"pathName": "pages/user/pay",
 					"query": "level=3"
+				},
+				{
+					"id": -1,
+					"name": "积分",
+					"pathName": "pages/agency/record"
 				}
 			]
 		}
