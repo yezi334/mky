@@ -109,7 +109,7 @@ Page({
                 if (status == 1) {
                   comm.toastSuccess('兑换成功');
                   wx.redirectTo({
-                    url: '../agency/index?fxlevel=3?ispay=1',
+                    url: '../agency/index?fxlevel=3&ispay=1',
                   });
                 } else {
                   comm.toastSuccess('网络异常！');
