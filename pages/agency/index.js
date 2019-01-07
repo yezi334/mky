@@ -130,13 +130,5 @@ Page({
     })
   },
   //返回页面固定页面
-  onUnload() {
-    var that = this;
-    var ispay = that.data.ispay;
-    if (ispay == 1) {
-      wx.reLaunch({
-        url: '../user/user'
-      })
-    }
-  }
+
 })

@@ -67,7 +67,7 @@
         <text class='p_le10'>提现明细</text>
       </view>
     </navigator>
-    <navigator url="../agency/record">
+    <navigator url="../agency/record" open-type="redirect">
       <view class="tableviewcell">
         <image src="/images/my/jfzh.png" />
         <text class='p_le10'>积分账户</text>

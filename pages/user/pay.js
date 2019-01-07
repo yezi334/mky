@@ -280,16 +280,17 @@ Page({
                 title: "支付成功!",
                 duration: 2000,
               });
-
-              //发送模板消息
-              that.sendTemplatePaySuccess(order_sn);
               var level = that.data.level;
-              setTimeout(function() {
-                wx.switchTab({
+              setTimeout(function () {
+                wx.redirectTo({
                   url: '../user/member?ispay=1',
 
                 })
               }, 2500);
+
+              //发送模板消息
+              that.sendTemplatePaySuccess(order_sn);
+            
             },
             fail(res) {
               wx.showToast({

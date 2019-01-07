@@ -39,9 +39,5 @@ Page({
 
   },
   //返回页面固定页面
-  onUnload() {
-    wx.reLaunch({
-      url: '../agency/index'
-    })
-  }
+ 
 })

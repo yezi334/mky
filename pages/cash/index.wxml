@@ -7,17 +7,18 @@
       </view>
       <!--默认action-sheet为隐藏，由button触发   <input type="primary" bindtap="listenerButton" class="in" />银行卡-->
       <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet">
-        <scroll-view scroll-y="true" style="height:{{actionSheetItems.length>=3?300:''}}px">
-
-          <block wx:for="{{actionSheetItems}}">
+        <scroll-view scroll-y="true" style="height:{{actionSheetItems.length>=3?235:''}}px">
+          <view style="margin-bottom:15px;">
+          <block wx:for="{{actionSheetItems}}"  >
             <action-sheet-item>
-              <view bindtap='check'  style='height:50px;line-height:50px' data-cardid="{{item.id}}" data-card="{{item.card}}" data-cardnum="{{item.number}}">{{item.card}}({{item.number}})
+              <view bindtap='check'  data-cardid="{{item.id}}" data-card="{{item.card}}" data-cardnum="{{item.number}}">{{item.card}}({{item.number}})
                 <text class='jiantou'>></text>
               </view>
             </action-sheet-item>
           </block>
+          </view>
           <action-sheet-item>
-            <view bindtap='addcard' class="foot tc">添加银行卡</view>
+            <view bindtap='addcard' class="foot tc bte">添加银行卡</view>
           </action-sheet-item>
           <!--自动隐藏action-sheet-->
 

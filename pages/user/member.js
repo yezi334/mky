@@ -5,7 +5,7 @@ var app = getApp();
 
 Page({
   data: {
-    money: 2980,
+    money:'',
     ispay:'',
     level: 1,
     slideOffset: 19,
@@ -128,7 +128,7 @@ Page({
   wxpay(e) {
     var level = e.currentTarget.dataset.level;
     if (wx.getStorageSync('phone')) {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../user/pay?level=' + level
       })
     } else {
@@ -139,73 +139,7 @@ Page({
       });
     }
   },
-  //调起微信支付
-  wxpay2(e) {
-    var that = this;
-    if (e.currentTarget.dataset.level) {
-      var level = e.currentTarget.dataset.level;
-    }
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Wxpay/pay',
-      data: {
-        openid: app.d.openid,
-        level: level,
-        uid: app.d.uid,
-      },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }, // 设置请求的 header
-      success: function(res) {
-        if (res.data.status == 1) {
-          var order = res.data.arr;
-          wx.requestPayment({
-            timeStamp: order.timeStamp,
-            nonceStr: order.nonceStr,
-            package: order.package,
-            signType: 'MD5',
-            paySign: order.paySign,
-            success(res) {
-              wx.showToast({
-                title: "支付成功!",
-                duration: 2000,
-              });
-              //page.onLoad();
-              //推荐上级上上级获得奖
-              setTimeout(function() {
-                wx.navigateTo({
-                  url: '../user/member',
-                });
-              }, 2500);
-            },
-            fail(res) {
-              wx.showToast({
-                title: "支付失败!",
-                duration: 3000
-              });
-              setTimeout(function() {
-                wx.navigateTo({
-                  url: '../user/member',
-                });
-              }, 2500);
-            }
-          })
-        } else {
-          wx.showToast({
-            title: res.data.err,
-            duration: 2000
-          });
-        }
-      },
-      fail() {
-        // fail
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
-      }
-    })
-  },
+ 
   // returnProduct:function(){
   // },
   initSystemInfo() {
@@ -305,15 +239,5 @@ Page({
     })
   },
   //返回页面固定页面
-  onUnload() {
-    //是否是支付完成后的跳转
-    var that=this;
-    var ispay=that.data.ispay;
-   if(ispay==1){
-     wx.reLaunch({
-       url: '../user/user'
-     })
-   }
-    
-  }
+ 
 })
